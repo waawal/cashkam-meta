@@ -31,12 +31,12 @@ Validate a application user
 
 
 
-   :form username: The username
+   :form username: The username.
    :type username: str
-   :form password: The password
+   :form password: The password.
    :type password: str
    :status 200: User Authenticated.
-   :status 400: Password or login is missing.
+   :status 400: Password or username is missing.
    :status 401: Authentication failed
 
 
@@ -105,15 +105,15 @@ Get a list of ads
         }
       ]
 
-   :query offset: offset number. default is 0
-   :query limit: limit number. default is 10
+   :query offset: offset number. default is 0.
+   :query limit: limit number. default is 10.
    :query username: Username of the author.
-   :query region: Name of geographical region
+   :query region: Name of a geographical region.
    :query coordinates: Coordinates, used together with coordinates-offset.
-   :query coordinates-offset: Filters out ads based on requesters coordinates + the offset.
+   :query coordinates-offset: Filters out ads based on `coordinates` and the offset.
    :query text-header: Search the ad-headers for a pattern.
-   :query text-all: Search the ad-headers and the ad-bodies for a pattern.
-   :statuscode 200: no error.
+   :query text-all: Search the ad-headers and the ad-textbodies for a pattern.
+   :statuscode 200: Success!
    :statuscode 404: No ads found.
    :statuscode 400: when dependent queries are missing.
 
