@@ -11,7 +11,7 @@ Validate a application user
 
 .. http:post:: /auth
 
-   Checks credentials and returns a authentication token. This method will not be available in the public API.
+   Checks credentials and returns a authentication token valid for 90 days.
    
    It accepts :http:method:`post` only.
 
