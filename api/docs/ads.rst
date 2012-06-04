@@ -6,7 +6,7 @@ Get a list of ads
 
 .. http:get:: /ads
 
-   Get a list of ads based on filters. Returns a array of `adObject`s.
+   Get a list of ads based on filters. Returns a array of `adObject` s.
 
    **Example request**:
 
@@ -54,6 +54,7 @@ Get a list of ads
    :statuscode 200: Success!
    :statuscode 404: No ads found.
    :statuscode 400: when dependent queries are missing.
+   :statuscode 401: Not logged in.
 
 Post a ad
 ~~~~~~~~~
@@ -74,7 +75,8 @@ Post a ad
    :type token: str
    :status 200: Classified ad created successfully.
    :status 400: when form parameters are missing.
-   :status 403: Authentication didn't pass
+   :statuscode 403: User is not permitted to create a ad.
+   :statuscode 401: Not logged in.
 
 Get all details of an ad
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,14 +85,30 @@ Get all details of an ad
 
    Get all the details from a `ad_id`. Returns a `adObject`.
    
-   TODO
+   :statuscode 401: Not logged in.
+   :statuscode 404: `ad_id` not found.
+   :statuscode 200: Success!
 
 Change a ad
 ~~~~~~~~~~~
 
 .. http:put:: /ad/(str:ad_id)
+   
+   Changes/adds to a already published ad.
+
+   :statuscode 403: User is not permitted to modify the ad
+   :statuscode 401: Not logged in.
+   :statuscode 404: `ad_id` not found.
+   :statuscode 200: Success!
 
 Remove a ad
 ~~~~~~~~~~~
 
 .. http:delete:: /ad/(str:ad_id)
+   
+   Deactivates a ad. Ads are never removed/deleted per se.
+   
+   :statuscode 200: Success, Ad deactivated.
+   :statuscode 404: `ad_id` not found.
+   :statuscode 403: User is not permitted to modify the ad.
+   :statuscode 401: Not logged in.

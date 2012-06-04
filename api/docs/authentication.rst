@@ -3,7 +3,7 @@ Authentication
 
 Authentication is provided a little differently in the internal API as opposed to the planned public. The public is based on basic-auth.
 
-**Warning** This part of the API should be considered as interim. We will probably move towards a more sustainable solution and go with OAuth2.
+.. warning:: This part of the API should be considered as interim. We will probably move towards a more sustainable solution and go with OAuth2.
 
 Authenticate app credentials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,6 +65,12 @@ Change app credentials
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. http:put:: /auth/(str:user_id)
-   
-   TODO!
+
+   :query old_password: The old password.
+   :type old_password: str
+   :query new_password: The new password.
+   :type new_password: str
+   :statuscode 403: User is not permitted to change credentials.
+   :statuscode 404: `user_id` not found.
+   :statuscode 401: Not logged in.
    
