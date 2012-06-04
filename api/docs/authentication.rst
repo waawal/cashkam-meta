@@ -1,6 +1,10 @@
 Authentication
 --------------
 
+Authentication is provided a little differently in the internal API as opposed to the planned public. The public is based on basic-auth.
+
+**Warning** This part of the API should be considered as a interim. We will probably move to a more sustainable solution and go with OAuth2.
+
 Validate a application user
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -34,6 +38,9 @@ Validate a application user
    :status 400: Password or username is missing.
    :status 401: Authentication failed
 
-Create a application user
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Create a application user based on external authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. http:post:: /auth
+
 TODO

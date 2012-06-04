@@ -15,6 +15,7 @@ Post a ad
    :type header: str
    :form body: Text for the ad.
    :type body: str
+   :form coordinates: The coordinates.
    :form token: The authentication hash.
    :type token: str
    :status 200: Classified ad created successfully.

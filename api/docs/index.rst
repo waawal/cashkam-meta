@@ -9,4 +9,5 @@ Contents:
    :maxdepth: 2
 
    authentication
+   users
    ads
