@@ -10,7 +10,6 @@ Find users
 
    Returns a array of `userObject` s based on filters.
 
-   :statuscode 401: Not logged in.
    :statuscode 404: No users found.
    :statuscode 200: Success!
 
@@ -26,7 +25,6 @@ Get user details
 
    Returns a `userObject`.
    
-   :statuscode 401: Not logged in.
    :statuscode 404: `user_id` not found.
    :statuscode 200: Success!
 

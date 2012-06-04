@@ -54,7 +54,6 @@ Get a list of ads
    :statuscode 200: Success!
    :statuscode 404: No ads found.
    :statuscode 400: when dependent queries are missing.
-   :statuscode 401: Not logged in.
 
 Post a ad
 ~~~~~~~~~
@@ -85,7 +84,6 @@ Get all details of an ad
 
    Get all the details from a `ad_id`. Returns a `adObject`.
    
-   :statuscode 401: Not logged in.
    :statuscode 404: `ad_id` not found.
    :statuscode 200: Success!
 
