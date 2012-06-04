@@ -3,18 +3,26 @@ Authentication
 
 Authentication is provided a little differently in the internal API as opposed to the planned public. The public is based on basic-auth.
 
-**Warning** This part of the API should be considered as a interim. We will probably move to a more sustainable solution and go with OAuth2.
+**Warning** This part of the API should be considered as interim. We will probably move towards a more sustainable solution and go with OAuth2.
 
-Validate a application user
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Authenticate app credentials
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. http:post:: /auth
+.. http:get:: /auth
 
-   Checks credentials and returns a authentication token. This method will not be available in the public API.
+   Checks credentials and returns a `auth_token`.
    
-   It accepts :http:method:`post` only.
+   It accepts :http:method:`get` only.
 
    :mimetype:`application/json`
+   
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /auth?username=colluser&password=mySecretPass412 HTTP/1.1
+      Host: cashk.am
+      Accept: application/json, text/javascript
    
    **Example response**:
 
@@ -25,22 +33,38 @@ Validate a application user
       Content-Type: application/json
 
         {
-          "token": "adsdasdljn45345+kmfsd435l%km"
+          "auth_token": "adsdasdljn45345+kmfsd435l%km"
         }
 
 
 
-   :form username: The username.
+   :query username: The username.
    :type username: str
-   :form password: The password.
+   :query password: The password.
    :type password: str
    :status 200: User Authenticated.
    :status 400: Password or username is missing.
    :status 401: Authentication failed
 
-Create a application user based on external authentication
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create app credentials
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. http:post:: /auth
 
-TODO
+   Returns a `auth_token`.
+
+   :form username: The username.
+   :type username: str
+   :form password: The password.
+   :type password: str
+   :status 200: User Created successfully.
+   :status 400: Password or username is missing.
+   :status 409: Username already in use.
+
+Change app credentials
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. http:put:: /auth/(str:user_id)
+   
+   TODO!
+   

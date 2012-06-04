@@ -1,33 +1,12 @@
 Classified ad's
 ---------------
 
-Post a ad
-~~~~~~~~~
-
-.. http:post:: /ads
-
-   Posts a new classified ad.
-
-   :mimetype:`application/json`
-
-   :form image: base64 encoded image in JPEG
-   :form header: Header for the ad.
-   :type header: str
-   :form body: Text for the ad.
-   :type body: str
-   :form coordinates: The coordinates.
-   :form token: The authentication hash.
-   :type token: str
-   :status 200: Classified ad created successfully.
-   :status 400: when form parameters are missing.
-   :status 403: Authentication didn't pass
-
 Get a list of ads
 ~~~~~~~~~~~~~~~~~
 
 .. http:get:: /ads
 
-   Get a list of ads based on filters.
+   Get a list of ads based on filters. Returns a array of `adObject`s.
 
    **Example request**:
 
@@ -47,7 +26,7 @@ Get a list of ads
 
       [
         {
-          "ad_id": 12345,
+          "ad_id": fsdfg342fds,
           "author_id": "supercoolusername",
           "active": true,
           "header": "Small shed",
@@ -55,7 +34,7 @@ Get a list of ads
           "image": "http://akamai.cashk.am/images/fsdfd98fdas.jpg"
         },
         {
-          "ad_id": 12346,
+          "ad_id": adfsg4fa834r,
           "author_id": "supercoolusername",
           "active": true,
           "header": null,
@@ -76,11 +55,42 @@ Get a list of ads
    :statuscode 404: No ads found.
    :statuscode 400: when dependent queries are missing.
 
+Post a ad
+~~~~~~~~~
+
+.. http:post:: /ads
+
+   Posts a new classified ad. Returns a `ad_id`.
+
+   :mimetype:`application/json`
+
+   :form image: base64 encoded image in JPEG
+   :form header: Header for the ad.
+   :type header: str
+   :form body: Text for the ad.
+   :type body: str
+   :form coordinates: The coordinates.
+   :form token: The authentication hash.
+   :type token: str
+   :status 200: Classified ad created successfully.
+   :status 400: when form parameters are missing.
+   :status 403: Authentication didn't pass
+
 Get all details of an ad
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. http:get:: /ad/(int:ad_id)
+.. http:get:: /ad/(str:ad_id)
 
-   Get all the details from a `ad_id`.
+   Get all the details from a `ad_id`. Returns a `adObject`.
    
    TODO
+
+Change a ad
+~~~~~~~~~~~
+
+.. http:put:: /ad/(str:ad_id)
+
+Remove a ad
+~~~~~~~~~~~
+
+.. http:delete:: /ad/(str:ad_id)
