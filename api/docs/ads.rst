@@ -6,7 +6,7 @@ Get a list of ads
 
 .. http:get:: /ads
 
-   Get a list of ads based on filters. Returns a array of `AdObject` s.
+   Get a list of ads based on filters. Returns a array of :js:class:`AdObject` s.
 
    **Example request**:
 
@@ -60,7 +60,7 @@ Post a ad
 
 .. http:post:: /ads
 
-   Posts a new classified ad. Returns a `adId`.
+   Posts a new classified ad. Returns a :js:data:`AdObject.adId`.
 
    :mimetype:`application/json`
 
@@ -82,9 +82,9 @@ Get all details of an ad
 
 .. http:get:: /ad/(str:adId)
 
-   Get all the details from a `adId`. Returns a `AdObject`.
+   Get all the details from a :js:data:`AdObject.adId`. Returns a :js:class:`AdObject`.
    
-   :statuscode 404: `adId` not found.
+   :statuscode 404: :js:data:`AdObject.adId` not found.
    :statuscode 200: Success!
 
 Change a ad
@@ -96,7 +96,7 @@ Change a ad
 
    :statuscode 403: User is not permitted to modify the ad
    :statuscode 401: Not logged in.
-   :statuscode 404: `adId` not found.
+   :statuscode 404: :js:data:`AdObject.adId` not found.
    :statuscode 200: Success!
 
 Remove a ad
@@ -107,6 +107,6 @@ Remove a ad
    Deactivates a ad. Ads are never removed/deleted per se.
    
    :statuscode 200: Success, Ad deactivated.
-   :statuscode 404: `adId` not found.
+   :statuscode 404: :js:data:`AdObject.adId` not found.
    :statuscode 403: User is not permitted to modify the ad.
    :statuscode 401: Not logged in.

@@ -6,7 +6,11 @@ Main Objects
 UserObject
 ----------
 
-:http:get:`/user/(str:userId)`, :http:put:`/user/(str:userId)`, :http:get:`/users`
+:http:get:`/user/(str:userId)`, :http:get:`/users`
+
+.. js:class:: UserObject
+
+   A object representing a user.
 
 .. js:data:: UserObject.userId
    
@@ -25,7 +29,11 @@ TODO
 AdObject
 --------
 
-:http:get:`/ads`, :http:get:`/ad/(str:adId)`, :http:put:`/ad/(str:adId)`
+:http:get:`/ads`, :http:get:`/ad/(str:adId)`
+
+.. js:class:: AdObject
+
+   A object representing a ad.
 
 .. js:data:: AdObject.adId
    

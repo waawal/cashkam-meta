@@ -8,7 +8,7 @@ Find users
 
 .. http:get:: /users
 
-   Returns a array of `UserObject` s based on filters.
+   Returns a array of :js:class:`UserObject` based on filters.
 
    :statuscode 404: No users found.
    :statuscode 200: Success!
@@ -23,9 +23,9 @@ Get user details
 
 .. http:get:: /user/(str:userId)
 
-   Returns a `UserObject`.
+   Returns a :js:class:`UserObject`.
    
-   :statuscode 404: `userId` not found.
+   :statuscode 404: :js:data:`UserObject.userId` not found.
    :statuscode 200: Success!
 
 Change user details
@@ -35,7 +35,7 @@ Change user details
    
    :statuscode 403: User is not permitted to change details.
    :statuscode 401: Not logged in.
-   :statuscode 404: `userId` not found.
+   :statuscode 404: :js:data:`UserObject.userId` not found.
    :statuscode 200: Success!
 
 Remove a user
@@ -45,5 +45,5 @@ Remove a user
    
    :statuscode 403: User is not permitted to do that (for some reason...).
    :statuscode 401: Not logged in.
-   :statuscode 404: `userId` not found.
+   :statuscode 404: :js:data:`UserObject.userId` not found.
    :statuscode 200: Success!
