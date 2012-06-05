@@ -67,7 +67,7 @@ Create app credentials
    :status 409: Username already in use.
    :returns: `Authorization Token`
 
-Change app credentials
+Modify app credentials
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. http:put:: /auth/(str:username)

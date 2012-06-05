@@ -18,8 +18,8 @@ Find users
    :statuscode 200: Success!
    :returns: .. js:function:: array()
 
-Create new user
-~~~~~~~~~~~~~~~
+Create a new user
+~~~~~~~~~~~~~~~~~
 
 .. http:post:: /users
    
@@ -47,7 +47,7 @@ Get user details
    :statuscode 401: Not logged in.
    :returns: :js:class:`UserObject`
 
-Change user details
+Modify user details
 ~~~~~~~~~~~~~~~~~~~
 
 .. http:put:: /user/(str:name)

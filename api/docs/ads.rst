@@ -58,8 +58,8 @@ Get a list of ads
    :statuscode 404: No ads found.
    :statuscode 400: when dependent queries are missing.
 
-Post a ad
-~~~~~~~~~
+Publish a ad
+~~~~~~~~~~~~
 
 .. http:post:: /ads
 
@@ -76,8 +76,8 @@ Post a ad
    :statuscode 401: Not logged in.
    :returns: :js:data:`AdObject.id`
 
-Get all details of an ad
-~~~~~~~~~~~~~~~~~~~~~~~~
+Get details of a ad
+~~~~~~~~~~~~~~~~~~~
 
 .. http:get:: /ad/(str:id)
 
@@ -88,7 +88,7 @@ Get all details of an ad
    :statuscode 200: Success!
    :returns: :js:class:`AdObject`
 
-Change a ad
+Modify a ad
 ~~~~~~~~~~~
 
 .. http:put:: /ad/(str:id)

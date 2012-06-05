@@ -11,7 +11,7 @@ Appcelerator
 Authentication
 ~~~~~~~~~~~~~~
 
-A very simple example on how to retrieve a authentication token with Appcelerator.
+A very simple and to the point example on how to retrieve a authentication token with Appcelerator.
 
 .. https://wiki.appcelerator.org/display/guides/Handling+Remote+Data+with+HTTPClient+and+JSON
 
