@@ -76,8 +76,8 @@ Publish a ad
    :statuscode 401: Not logged in.
    :returns: :js:data:`AdObject.id`
 
-Get details of a ad
-~~~~~~~~~~~~~~~~~~~
+Get ad details
+~~~~~~~~~~~~~~
 
 .. http:get:: /ad/(str:id)
 
