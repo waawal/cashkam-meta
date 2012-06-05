@@ -37,9 +37,9 @@ Authenticate app credentials
       Vary: Accept
       Content-Type: application/json
 
-      "adsdasdljn45345+kmfsd435l%km"
-        
-
+        {
+          "token": "adsdasdljn45345+kmfsd435l%km"
+        }
 
 
    :query username: The username.

@@ -24,7 +24,7 @@ A very simple example on how to retrieve a authentication token with Appcelerato
         onload: function(e) {
             Ti.API.debug(this.responseText);
             json = JSON.parse(this.responseText);
-            alert(json["authToken"]);
+            alert(json["token"]);
         },
         onerror: function(e) {
             Ti.API.debug(e.error);
