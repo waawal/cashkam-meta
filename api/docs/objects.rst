@@ -6,17 +6,13 @@ Main Objects
 UserObject
 ----------
 
-:http:get:`/user/(str:id)`, :http:get:`/users`
+:http:get:`/user/(str:name)`, :http:get:`/users`
 
 .. js:class:: UserObject
 
    A object representing a user.
 
-.. js:data:: UserObject.id
-   
-   The user id.
-
-.. js:data:: UserObject.username
+.. js:data:: UserObject.name
 
    The Username in utf-8.
 
@@ -55,7 +51,7 @@ AdObject
 
 .. js:data:: AdObject.user
    
-   Published by :js:data:`UserObject.id`
+   Published by :js:data:`UserObject.name`
 
 .. js:data:: AdObject.text
    
@@ -79,7 +75,7 @@ AdObject
    
 .. code-block:: javascript
 
-   [int, int]
+   [1.51353, 0.14345]
 
 .. js:data:: AdObject.region
 
@@ -102,7 +98,7 @@ AdObject
 
    [["url", "url", "url", "url"]["url", "url", "url", "url"]]
 
-.. js:data:: UserObject.settings
+.. js:data:: AdObject.settings
 
    Misc keystore.
 

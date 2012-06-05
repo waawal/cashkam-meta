@@ -38,11 +38,11 @@ Create new user
 Get user details
 ~~~~~~~~~~~~~~~~
 
-.. http:get:: /user/(str:id)
+.. http:get:: /user/(str:name)
 
    Returns a :js:class:`UserObject`.
    
-   :statuscode 404: :js:data:`UserObject.id` not found.
+   :statuscode 404: :js:data:`UserObject.name` not found.
    :statuscode 200: Success!
    :statuscode 401: Not logged in.
    :returns: :js:class:`UserObject`
@@ -50,9 +50,9 @@ Get user details
 Change user details
 ~~~~~~~~~~~~~~~~~~~
 
-.. http:put:: /user/(str:id)
+.. http:put:: /user/(str:name)
 
-   :query userName: The Username
+   :query name: The Username
    :query contact.address: Address.
    :query contact.phone: Phone number.
    :query contact.postalcode: Postal code.
@@ -62,15 +62,15 @@ Change user details
    :query contact.email: email address of the user.
    :statuscode 403: User is not permitted to change details.
    :statuscode 401: Not logged in.
-   :statuscode 404: :js:data:`UserObject.id` not found.
+   :statuscode 404: :js:data:`UserObject.name` not found.
    :statuscode 200: Success!
 
 Remove a user
 ~~~~~~~~~~~~~
 
-.. http:delete:: /user/(str:id)
+.. http:delete:: /user/(str:name)
    
    :statuscode 403: User is not permitted to do that (for some reason...).
    :statuscode 401: Not logged in.
-   :statuscode 404: :js:data:`UserObject.id` not found.
+   :statuscode 404: :js:data:`UserObject.name` not found.
    :statuscode 200: Success!

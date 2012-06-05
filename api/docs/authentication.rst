@@ -64,7 +64,7 @@ Create app credentials
    :status 200: User Created successfully.
    :status 400: Password or username is missing.
    :status 409: Username already in use.
-   :returns: :js:data:`UserObject.id`
+   :returns: :js:data:`UserObject.name`
 
 Change app credentials
 ~~~~~~~~~~~~~~~~~~~~~~
