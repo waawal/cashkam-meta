@@ -6,7 +6,7 @@ Get a list of ads
 
 .. http:get:: /ads
 
-   Get a list of ads based on filters. Returns a array of `adObject` s.
+   Get a list of ads based on filters. Returns a array of `AdObject` s.
 
    **Example request**:
 
@@ -26,19 +26,19 @@ Get a list of ads
 
       [
         {
-          "ad_id": fsdfg342fds,
-          "author_id": "supercoolusername",
+          "adId": fsdfg342fds,
+          "userId": "supercoolusername",
           "active": true,
           "header": "Small shed",
-          "image_small": "http://akamai.cashk.am/images/fsdfd98fdas_s.jpg",
+          "imageSmall": "http://akamai.cashk.am/images/fsdfd98fdas_s.jpg",
           "image": "http://akamai.cashk.am/images/fsdfd98fdas.jpg"
         },
         {
-          "ad_id": adfsg4fa834r,
-          "author_id": "supercoolusername",
+          "adId": adfsg4fa834r,
+          "userId": "supercoolusername",
           "active": true,
           "header": null,
-          "image_small": "http://akamai.cashk.am/images/fsdfd99fdas_s.jpg",
+          "imageSmall": "http://akamai.cashk.am/images/fsdfd99fdas_s.jpg",
           "image": "http://akamai.cashk.am/images/fsdfd99fdas.jpg"
         }
       ]
@@ -60,7 +60,7 @@ Post a ad
 
 .. http:post:: /ads
 
-   Posts a new classified ad. Returns a `ad_id`.
+   Posts a new classified ad. Returns a `adId`.
 
    :mimetype:`application/json`
 
@@ -80,33 +80,33 @@ Post a ad
 Get all details of an ad
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. http:get:: /ad/(str:ad_id)
+.. http:get:: /ad/(str:adId)
 
-   Get all the details from a `ad_id`. Returns a `adObject`.
+   Get all the details from a `adId`. Returns a `AdObject`.
    
-   :statuscode 404: `ad_id` not found.
+   :statuscode 404: `adId` not found.
    :statuscode 200: Success!
 
 Change a ad
 ~~~~~~~~~~~
 
-.. http:put:: /ad/(str:ad_id)
+.. http:put:: /ad/(str:adId)
    
    Changes/adds to a already published ad.
 
    :statuscode 403: User is not permitted to modify the ad
    :statuscode 401: Not logged in.
-   :statuscode 404: `ad_id` not found.
+   :statuscode 404: `adId` not found.
    :statuscode 200: Success!
 
 Remove a ad
 ~~~~~~~~~~~
 
-.. http:delete:: /ad/(str:ad_id)
+.. http:delete:: /ad/(str:adId)
    
    Deactivates a ad. Ads are never removed/deleted per se.
    
    :statuscode 200: Success, Ad deactivated.
-   :statuscode 404: `ad_id` not found.
+   :statuscode 404: `adId` not found.
    :statuscode 403: User is not permitted to modify the ad.
    :statuscode 401: Not logged in.

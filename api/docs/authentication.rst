@@ -10,7 +10,7 @@ Authenticate app credentials
 
 .. http:get:: /auth
 
-   Checks credentials and returns a `auth_token`.
+   Checks credentials and returns a `authToken`.
    
    It accepts :http:method:`get` only.
 
@@ -33,7 +33,7 @@ Authenticate app credentials
       Content-Type: application/json
 
         {
-          "auth_token": "adsdasdljn45345+kmfsd435l%km"
+          "authToken": "adsdasdljn45345+kmfsd435l%km"
         }
 
 
@@ -51,7 +51,7 @@ Create app credentials
 
 .. http:post:: /auth
 
-   Returns a `auth_token`.
+   Returns a `authToken`.
 
    :form username: The username.
    :type username: str
@@ -64,13 +64,13 @@ Create app credentials
 Change app credentials
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. http:put:: /auth/(str:user_id)
+.. http:put:: /auth/(str:userId)
 
    :query old_password: The old password.
    :type old_password: str
    :query new_password: The new password.
    :type new_password: str
    :statuscode 403: User is not permitted to change credentials.
-   :statuscode 404: `user_id` not found.
+   :statuscode 404: `userId` not found.
    :statuscode 401: Not logged in.
    
