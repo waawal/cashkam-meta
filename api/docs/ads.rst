@@ -49,8 +49,7 @@ Get a list of ads
    :query region: Name of a geographical region.
    :query coordinates: Coordinates, used together with coordinates-offset.
    :query coordinates-offset: Filters out ads based on `coordinates` and the offset.
-   :query text-header: Search the ad-headers for a pattern.
-   :query text-all: Search the ad-headers and the ad-textbodies for a pattern.
+   :query text: Search the text of the ads for a pattern.
    :statuscode 200: Success!
    :statuscode 404: No ads found.
    :statuscode 400: when dependent queries are missing.
@@ -82,10 +81,11 @@ Get all details of an ad
 
 .. http:get:: /ad/(str:adId)
 
-   Get all the details from a :js:data:`AdObject.adId`. Returns a :js:class:`AdObject`.
+   Get all the details from a :js:data:`AdObject.adId`.
    
    :statuscode 404: :js:data:`AdObject.adId` not found.
    :statuscode 200: Success!
+   :returns: :js:class:`AdObject`
 
 Change a ad
 ~~~~~~~~~~~

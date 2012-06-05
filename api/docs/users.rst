@@ -12,6 +12,7 @@ Find users
 
    :statuscode 404: No users found.
    :statuscode 200: Success!
+   :returns: .. js:function:: array()
 
 Create new user
 ~~~~~~~~~~~~~~~
@@ -27,6 +28,7 @@ Get user details
    
    :statuscode 404: :js:data:`UserObject.userId` not found.
    :statuscode 200: Success!
+   :returns: :js:class:`UserObject`
 
 Change user details
 ~~~~~~~~~~~~~~~~~~~

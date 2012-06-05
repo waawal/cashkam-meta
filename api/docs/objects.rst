@@ -44,4 +44,13 @@ TODO
 Other Objects
 =============
 
-TODO
+ErrorObject
+-----------
+
+.. js:class:: ErrorObject()
+
+   Generic Error message
+
+.. js:data:: ErrorObject.message
+   
+   The error message in utf-8
