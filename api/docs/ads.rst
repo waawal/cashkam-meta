@@ -26,20 +26,24 @@ Get a list of ads
 
       [
         {
-          "adId": fsdfg342fds,
-          "userId": "supercoolusername",
+          "id": fsdfg342fds,
+          "user": "supercoolusername",
           "active": true,
-          "header": "Small shed",
-          "imageSmall": "http://akamai.cashk.am/images/fsdfd98fdas_s.jpg",
-          "image": "http://akamai.cashk.am/images/fsdfd98fdas.jpg"
+          "text": "Small shed",
+          "media": [["http://akamai.cashk.am/images/fsdfd98fdas_square.jpg", http://akamai.cashk.am/images/fsdfd98fdas_s.jpg, http://akamai.cashk.am/images/fsdfd98fdas_m.jpg, http://akamai.cashk.am/images/fsdfd98fdas.jpg]],
+          "datetime": 1338882525,
+          "coords": [51.500611, 0.124611],
+          "region": ["uk", "london", "london"]
         },
         {
-          "adId": adfsg4fa834r,
-          "userId": "supercoolusername",
+          "id": fsdfg242fds,
+          "user": "supercoolusername",
           "active": true,
-          "header": null,
-          "imageSmall": "http://akamai.cashk.am/images/fsdfd99fdas_s.jpg",
-          "image": "http://akamai.cashk.am/images/fsdfd99fdas.jpg"
+          "text": null,
+          "media": [["http://akamai.cashk.am/images/fsdfd98fdas_square.jpg", http://akamai.cashk.am/images/fsdfd98fdas_s.jpg, http://akamai.cashk.am/images/fsdfd98fdas_m.jpg, http://akamai.cashk.am/images/fsdfd98fdas.jpg]],
+          "datetime": 1338882525,
+          "coords": [51.500611, 0.124611],
+          "region": ["uk", "london", "london"]
         }
       ]
 
@@ -59,54 +63,54 @@ Post a ad
 
 .. http:post:: /ads
 
-   Posts a new classified ad. Returns a :js:data:`AdObject.adId`.
+   Posts a new classified ad.
 
    :mimetype:`application/json`
 
    :form image: base64 encoded image in JPEG
-   :form header: Header for the ad.
-   :type header: str
-   :form body: Text for the ad.
-   :type body: str
-   :form coordinates: The coordinates.
-   :form token: The authentication hash.
-   :type token: str
+   :form text: Text for the ad.
+   :form coords: The coordinates.
    :status 200: Classified ad created successfully.
    :status 400: when form parameters are missing.
    :statuscode 403: User is not permitted to create a ad.
    :statuscode 401: Not logged in.
+   :returns: :js:data:`AdObject.id`
 
 Get all details of an ad
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. http:get:: /ad/(str:adId)
+.. http:get:: /ad/(str:id)
 
-   Get all the details from a :js:data:`AdObject.adId`.
+   Get all the details from a :js:data:`AdObject.id`.
    
-   :statuscode 404: :js:data:`AdObject.adId` not found.
+
+   :statuscode 404: :js:data:`AdObject.id` not found.
    :statuscode 200: Success!
    :returns: :js:class:`AdObject`
 
 Change a ad
 ~~~~~~~~~~~
 
-.. http:put:: /ad/(str:adId)
+.. http:put:: /ad/(str:id)
    
    Changes/adds to a already published ad.
 
+   :query image: base64 encoded image in JPEG
+   :query text: Text for the ad.
+   :query coords: The coordinates.
    :statuscode 403: User is not permitted to modify the ad
    :statuscode 401: Not logged in.
-   :statuscode 404: :js:data:`AdObject.adId` not found.
+   :statuscode 404: :js:data:`AdObject.id` not found.
    :statuscode 200: Success!
 
 Remove a ad
 ~~~~~~~~~~~
 
-.. http:delete:: /ad/(str:adId)
+.. http:delete:: /ad/(str:id)
    
    Deactivates a ad. Ads are never removed/deleted per se.
    
    :statuscode 200: Success, Ad deactivated.
-   :statuscode 404: :js:data:`AdObject.adId` not found.
+   :statuscode 404: :js:data:`AdObject.id` not found.
    :statuscode 403: User is not permitted to modify the ad.
    :statuscode 401: Not logged in.

@@ -1,7 +1,12 @@
 Authentication
 --------------
 
-Authentication is provided a little differently in the internal API as opposed to the planned public. The public is based on basic-auth.
+Authentication should be done at the first time of use. The returned token should then be stored locally on the device and sent in every http-requests header as:
+
+   .. sourcecode:: http
+   
+      GET /auth?username=colluser&password=mySecretPass412 HTTP/1.1
+      Token: adsdasdljn45345+kmfsd435l%km
 
 .. warning:: This part of the API should be considered as interim. We will probably move towards a more sustainable solution and go with OAuth2.
 
@@ -10,7 +15,7 @@ Authenticate app credentials
 
 .. http:get:: /auth
 
-   Checks credentials and returns a `authToken`.
+   Checks credentials and returns a authorization `Token`.
    
    It accepts :http:method:`get` only.
 
@@ -32,9 +37,8 @@ Authenticate app credentials
       Vary: Accept
       Content-Type: application/json
 
-        {
-          "authToken": "adsdasdljn45345+kmfsd435l%km"
-        }
+      "adsdasdljn45345+kmfsd435l%km"
+        
 
 
 
@@ -51,7 +55,7 @@ Create app credentials
 
 .. http:post:: /auth
 
-   Returns a `authToken`.
+   Create a new login.
 
    :form username: The username.
    :type username: str
@@ -60,17 +64,20 @@ Create app credentials
    :status 200: User Created successfully.
    :status 400: Password or username is missing.
    :status 409: Username already in use.
+   :returns: :js:data:`UserObject.id`
 
 Change app credentials
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. http:put:: /auth/(str:userId)
+.. http:put:: /auth/(str:username)
 
-   :query old_password: The old password.
-   :type old_password: str
-   :query new_password: The new password.
-   :type new_password: str
+   :query password: The old password.
+   :type password: str
+   :query newPassword: The new password.
+   :type newPassword: str
    :statuscode 403: User is not permitted to change credentials.
-   :statuscode 404: `userId` not found.
+   :statuscode 404: `username` not found.
    :statuscode 401: Not logged in.
+   :status 200: Success!
+   
    
