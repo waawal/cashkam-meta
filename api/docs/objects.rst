@@ -1,12 +1,12 @@
 Main Objects
 ============
 
-Objects returned by some of the methods as `JSON`.
+`JSON`-notated objects returned by some of the API methods.
 
 UserObject
 ----------
 
-A UserObject has all the described attributes but anyone of them can be set to null.
+:http:get:`/user/(str:userId)`, :http:put:`/user/(str:userId)`, :http:get:`/users`
 
 .. js:data:: UserObject.userId
    
@@ -22,8 +22,14 @@ A UserObject has all the described attributes but anyone of them can be set to n
 
 TODO
 
-adObject
+AdObject
 --------
+
+:http:get:`/ads`, :http:get:`/ad/(str:adId)`, :http:put:`/ad/(str:adId)`
+
+.. js:data:: AdObject.adId
+   
+   The `adId`.
 
 TODO
 
