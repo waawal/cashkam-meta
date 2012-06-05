@@ -15,7 +15,7 @@ Authenticate app credentials
 
 .. http:get:: /auth
 
-   Checks credentials and returns a authorization `Token`.
+   Checks credentials and returns a `Authorization Token`.
    
    It accepts :http:method:`get` only.
 
@@ -49,6 +49,7 @@ Authenticate app credentials
    :status 200: User Authenticated.
    :status 400: Password or username is missing.
    :status 401: Authentication failed
+   :returns: `Authorization Token`
 
 Create app credentials
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -64,7 +65,7 @@ Create app credentials
    :status 200: User Created successfully.
    :status 400: Password or username is missing.
    :status 409: Username already in use.
-   :returns: :js:data:`UserObject.name`
+   :returns: `Authorization Token`
 
 Change app credentials
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -80,4 +81,8 @@ Change app credentials
    :statuscode 401: Not logged in.
    :status 200: Success!
    
-   
+Revoke app credentials
+~~~~~~~~~~~~~~~~~~~~~~
+
+See :http:delete:`/user/(str:name)`
+
