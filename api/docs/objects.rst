@@ -103,7 +103,7 @@ Ad Object
 
    Images
    
-   * Square
+   * square
    * small
    * normal
    * original
