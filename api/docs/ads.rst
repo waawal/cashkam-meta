@@ -83,7 +83,6 @@ Get ad details
 
    Get all the details from a :js:data:`AdObject.id`.
    
-
    :statuscode 404: :js:data:`AdObject.id` not found.
    :statuscode 200: Success!
    :returns: :js:class:`AdObject`

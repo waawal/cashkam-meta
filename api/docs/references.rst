@@ -19,4 +19,5 @@ API
 Examples
 ~~~~~~~~
 
+* https://wiki.appcelerator.org/display/guides/Handling+Remote+Data+with+HTTPClient+and+JSON
 * https://github.com/appcelerator/Documentation-Examples/tree/master/HTTPClient

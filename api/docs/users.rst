@@ -10,7 +10,7 @@ Find users
 
    Returns a array of :js:class:`UserObject` based on filters.
 
-   :query userName: The Username.
+   :query name: The Username.
    :query email: The email address.
    :query country: Users country
    :query city: Users city.
