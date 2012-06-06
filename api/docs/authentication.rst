@@ -1,7 +1,12 @@
 Authentication
 --------------
 
-Authentication is provided a little differently in the internal API as opposed to the planned public. The public is based on basic-auth.
+Authentication should be done at the first time of use. The returned token should then be stored locally on the device and sent in every http-requests header as:
+
+   .. sourcecode:: http
+   
+      GET /auth?username=colluser&password=mySecretPass412 HTTP/1.1
+      Token: adsdasdljn45345+kmfsd435l%km
 
 .. warning:: This part of the API should be considered as interim. We will probably move towards a more sustainable solution and go with OAuth2.
 
@@ -10,7 +15,7 @@ Authenticate app credentials
 
 .. http:get:: /auth
 
-   Checks credentials and returns a `auth_token`.
+   Checks credentials and returns a `Authorization Token`.
    
    It accepts :http:method:`get` only.
 
@@ -20,7 +25,7 @@ Authenticate app credentials
 
    .. sourcecode:: http
 
-      GET /auth?username=colluser&password=mySecretPass412 HTTP/1.1
+      GET /auth?name=cooluser&password=mySecretPass412 HTTP/1.1
       Host: cashk.am
       Accept: application/json, text/javascript
    
@@ -33,25 +38,25 @@ Authenticate app credentials
       Content-Type: application/json
 
         {
-          "auth_token": "adsdasdljn45345+kmfsd435l%km"
+          "response": "adsdasdljn45345+kmfsd435l%km"
         }
 
 
-
-   :query username: The username.
-   :type username: str
+   :query name: The username.
+   :type name: str
    :query password: The password.
    :type password: str
    :status 200: User Authenticated.
    :status 400: Password or username is missing.
    :status 401: Authentication failed
+   :returns: :js:data:`Response.response` containing a `Authorization Token`
 
 Create app credentials
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. http:post:: /auth
 
-   Returns a `auth_token`.
+   Create a new login.
 
    :form username: The username.
    :type username: str
@@ -60,17 +65,26 @@ Create app credentials
    :status 200: User Created successfully.
    :status 400: Password or username is missing.
    :status 409: Username already in use.
+   :returns: :js:data:`Response.response` containing a `Authorization Token`
 
-Change app credentials
+Modify app credentials
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. http:put:: /auth/(str:user_id)
+.. http:put:: /auth/(str:name)
 
-   :query old_password: The old password.
-   :type old_password: str
-   :query new_password: The new password.
-   :type new_password: str
+   :query name: :js:data:`User.name`
+
+   :query password: The old password.
+   :type password: str
+   :query newPassword: The new password.
+   :type newPassword: str
    :statuscode 403: User is not permitted to change credentials.
-   :statuscode 404: `user_id` not found.
+   :statuscode 404: `username` not found.
    :statuscode 401: Not logged in.
+   :status 200: Success!
    
+Revoke app credentials
+~~~~~~~~~~~~~~~~~~~~~~
+
+See :http:delete:`/user/(str:name)`
+
