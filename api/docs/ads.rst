@@ -6,7 +6,7 @@ Get a list of ads
 
 .. http:get:: /ads
 
-   Get a list of ads based on filters. Returns a sequence (array) of :js:class:`AdObject` s.
+   Get a list of ads based on filters. Returns a sequence (array) of :js:class:`Ad` s.
 
    **Example request**:
 
@@ -57,7 +57,7 @@ Get a list of ads
    :statuscode 200: Success!
    :statuscode 404: No ads found.
    :statuscode 400: when dependent queries are missing.
-   :returns: `sequence` of :js:class:`AdObject`
+   :returns: `sequence` of :js:class:`Ad`
 
 Publish a ad
 ~~~~~~~~~~~~
@@ -75,18 +75,18 @@ Publish a ad
    :status 400: when form parameters are missing.
    :statuscode 403: User is not permitted to create a ad.
    :statuscode 401: Not logged in.
-   :returns: :js:data:`AdObject.id`
+   :returns: :js:data:`Ad.id`
 
 Get ad details
 ~~~~~~~~~~~~~~
 
 .. http:get:: /ad/(str:id)
 
-   Get all the details from a :js:data:`AdObject.id`.
+   Get all the details from a :js:data:`Ad.id`.
    
-   :statuscode 404: :js:data:`AdObject.id` not found.
+   :statuscode 404: :js:data:`Ad.id` not found.
    :statuscode 200: Success!
-   :returns: :js:class:`AdObject`
+   :returns: :js:class:`Ad`
 
 Modify a ad
 ~~~~~~~~~~~
@@ -100,7 +100,7 @@ Modify a ad
    :query coords: The coordinates.
    :statuscode 403: User is not permitted to modify the ad
    :statuscode 401: Not logged in.
-   :statuscode 404: :js:data:`AdObject.id` not found.
+   :statuscode 404: :js:data:`Ad.id` not found.
    :statuscode 200: Success!
 
 Remove a ad
@@ -111,6 +111,6 @@ Remove a ad
    Deactivates a ad. Ads are never removed/deleted per se.
    
    :statuscode 200: Success, Ad deactivated.
-   :statuscode 404: :js:data:`AdObject.id` not found.
+   :statuscode 404: :js:data:`Ad.id` not found.
    :statuscode 403: User is not permitted to modify the ad.
    :statuscode 401: Not logged in.

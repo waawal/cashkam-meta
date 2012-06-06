@@ -24,7 +24,7 @@ A very simple and to the point example on how to retrieve a authentication token
         onload: function(e) {
             Ti.API.debug(this.responseText);
             json = JSON.parse(this.responseText);
-            alert(json["token"]);
+            alert(json["response"]);
         },
         onerror: function(e) {
             Ti.API.debug(e.error);

@@ -3,20 +3,20 @@ Main Objects
 
 `JSON`-notated objects returned by some of the API methods.
 
-UserObject
-----------
+User Object
+-----------
 
 :http:get:`/user/(str:name)`, :http:get:`/users`
 
-.. js:class:: UserObject
+.. js:class:: User
 
    A object representing a user.
 
-.. js:data:: UserObject.name
+.. js:data:: User.name
 
    The Username in utf-8.
 
-.. js:data:: UserObject.subscription
+.. js:data:: User.subscription
 
    Status for subscription service.  
    
@@ -24,7 +24,7 @@ UserObject
 
    true or false
    
-.. js:data:: UserObject.active
+.. js:data:: User.active
 
    Set to false when user has requested to be removed.  
    
@@ -32,7 +32,7 @@ UserObject
 
    true or false
    
-.. js:data:: UserObject.contact
+.. js:data:: User.contact
 
    Contact details for user.  
 
@@ -46,32 +46,32 @@ UserObject
     "email": "katt@katt.mjau",
     "country": "Kattlandet"}
    
-.. js:data:: UserObject.storage
+.. js:data:: User.storage
 
    Misc keystore.
 
-AdObject
---------
+Ad Object
+---------
 
 :http:get:`/ads`, :http:get:`/ad/(str:id)`
 
-.. js:class:: AdObject
+.. js:class:: Ad
 
    A object representing a ad.
 
-.. js:data:: AdObject.id
+.. js:data:: Ad.id
    
    The id of the ad.
 
-.. js:data:: AdObject.user
+.. js:data:: Ad.user
    
-   Published by :js:data:`UserObject.name`
+   Published by :js:data:`User.name`
 
-.. js:data:: AdObject.text
+.. js:data:: Ad.text
    
    The ad text.
 
-.. js:data:: AdObject.active
+.. js:data:: Ad.active
    
    True if the ad is active.
 
@@ -79,11 +79,11 @@ AdObject
 
    true or false
    
-.. js:data:: AdObject.datetime
+.. js:data:: Ad.datetime
    
    When the ad was published (UTC)
    
-.. js:data:: AdObject.coords
+.. js:data:: Ad.coords
    
    Coordinates.  
    
@@ -91,7 +91,7 @@ AdObject
 
    [1.51353, 0.14345]
 
-.. js:data:: AdObject.region
+.. js:data:: Ad.region
 
    Region based on coords.  
 
@@ -99,7 +99,7 @@ AdObject
 
    ["countrycode", "region", "city"]
 
-.. js:data:: AdObject.media
+.. js:data:: Ad.media
 
    Images
    
@@ -112,24 +112,36 @@ AdObject
 
    [["url", "url", "url", "url"]["url", "url", "url", "url"]]
 
-.. js:data:: AdObject.storage
+.. js:data:: Ad.storage
 
    Misc keystore.
 
 Other Objects
 =============
 
-ErrorObject
------------
+Error Object
+------------
 
-.. js:class:: ErrorObject()
+.. js:class:: Error()
 
    Generic Error message
 
-.. js:data:: ErrorObject.message
+.. js:data:: Error.message
    
    The error message in utf-8
 
-.. js:data:: ErrorObject.code
+.. js:data:: Error.code
 
    Error code.
+
+GenericResponse Object
+----------------------
+
+.. js:class:: GenericResponse()
+
+   Generic Response
+
+.. js:data:: GenericResponse.response
+   
+   Response to be parsed as JSON
+

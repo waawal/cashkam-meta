@@ -8,7 +8,7 @@ Find users
 
 .. http:get:: /users
 
-   Returns a array of :js:class:`UserObject` based on filters.
+   Returns a array of :js:class:`User` based on filters.
 
    :query name: The Username.
    :query email: The email address.
@@ -16,14 +16,14 @@ Find users
    :query city: Users city.
    :statuscode 404: No users found.
    :statuscode 200: Success!
-   :returns: .. js:function:: array()
+   :returns: A sequence of :js:class:`User`
 
 Create a new user
 ~~~~~~~~~~~~~~~~~
 
 .. http:post:: /users
    
-   :form userName: The Username
+   :form name: The username.
    :form contact.address: Address.
    :form contact.phone: Phone number.
    :form contact.postalcode: Postal code.
@@ -40,19 +40,20 @@ Get user details
 
 .. http:get:: /user/(str:name)
 
-   Returns a :js:class:`UserObject`.
+   Returns a :js:class:`User`.
    
-   :statuscode 404: :js:data:`UserObject.name` not found.
+   :query name: The Username.
+   :statuscode 404: :js:data:`User.name` not found.
    :statuscode 200: Success!
    :statuscode 401: Not logged in.
-   :returns: :js:class:`UserObject`
+   :returns: :js:class:`User`
 
 Modify user details
 ~~~~~~~~~~~~~~~~~~~
 
 .. http:put:: /user/(str:name)
 
-   :query name: The Username
+   :query name: The Username.
    :query contact.address: Address.
    :query contact.phone: Phone number.
    :query contact.postalcode: Postal code.
@@ -62,7 +63,7 @@ Modify user details
    :query contact.email: email address of the user.
    :statuscode 403: User is not permitted to change details.
    :statuscode 401: Not logged in.
-   :statuscode 404: :js:data:`UserObject.name` not found.
+   :statuscode 404: :js:data:`User.name` not found.
    :statuscode 200: Success!
 
 Remove a user
@@ -70,7 +71,8 @@ Remove a user
 
 .. http:delete:: /user/(str:name)
    
+   :query name: The Username.
    :statuscode 403: User is not permitted to do that (for some reason...).
    :statuscode 401: Not logged in.
-   :statuscode 404: :js:data:`UserObject.name` not found.
+   :statuscode 404: :js:data:`User.name` not found.
    :statuscode 200: Success!

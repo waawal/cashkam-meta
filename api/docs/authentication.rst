@@ -25,7 +25,7 @@ Authenticate app credentials
 
    .. sourcecode:: http
 
-      GET /auth?username=colluser&password=mySecretPass412 HTTP/1.1
+      GET /auth?name=cooluser&password=mySecretPass412 HTTP/1.1
       Host: cashk.am
       Accept: application/json, text/javascript
    
@@ -38,18 +38,18 @@ Authenticate app credentials
       Content-Type: application/json
 
         {
-          "token": "adsdasdljn45345+kmfsd435l%km"
+          "response": "adsdasdljn45345+kmfsd435l%km"
         }
 
 
-   :query username: The username.
-   :type username: str
+   :query name: The username.
+   :type name: str
    :query password: The password.
    :type password: str
    :status 200: User Authenticated.
    :status 400: Password or username is missing.
    :status 401: Authentication failed
-   :returns: `Authorization Token`
+   :returns: :js:data:`GenericResponse.response` containing a `Authorization Token`
 
 Create app credentials
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -65,12 +65,14 @@ Create app credentials
    :status 200: User Created successfully.
    :status 400: Password or username is missing.
    :status 409: Username already in use.
-   :returns: `Authorization Token`
+   :returns: :js:data:`GenericResponse.response` containing a `Authorization Token`
 
 Modify app credentials
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. http:put:: /auth/(str:username)
+.. http:put:: /auth/(str:name)
+
+   :query name: :js:data:`User.name`
 
    :query password: The old password.
    :type password: str
