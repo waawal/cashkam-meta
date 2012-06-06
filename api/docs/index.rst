@@ -9,22 +9,20 @@ This is the internal documentation of the REST-like API for communication betwee
 ..  note::
     This API is subject to change until first Beta release.
 
-Objects
--------
-.. toctree::
-   :maxdepth: 3
-   
-   objects
+Methods and Objects
+-------------------
 
-API Methods
------------
-
-.. toctree::
-   :maxdepth: 2
-
-   authentication
-   users
-   ads
++-------------------------+--------------------------------+
+|        Methods          |            Objects             |
++-------------------------+--------------------------------+
+|                         |                                |
+|.. toctree::             |.. toctree::                    |
+|   :maxdepth: 2          |   :maxdepth: 3                 |
+|                         |                                |
+|   authentication        |   objects                      |
+|   users                 |                                |
+|   ads                   |                                |
++-------------------------+--------------------------------+
 
 Examples and References
 -----------------------

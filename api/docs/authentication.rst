@@ -49,7 +49,7 @@ Authenticate app credentials
    :status 200: User Authenticated.
    :status 400: Password or username is missing.
    :status 401: Authentication failed
-   :returns: :js:data:`GenericResponse.response` containing a `Authorization Token`
+   :returns: :js:data:`Response.response` containing a `Authorization Token`
 
 Create app credentials
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -65,7 +65,7 @@ Create app credentials
    :status 200: User Created successfully.
    :status 400: Password or username is missing.
    :status 409: Username already in use.
-   :returns: :js:data:`GenericResponse.response` containing a `Authorization Token`
+   :returns: :js:data:`Response.response` containing a `Authorization Token`
 
 Modify app credentials
 ~~~~~~~~~~~~~~~~~~~~~~

@@ -8,7 +8,7 @@ Find users
 
 .. http:get:: /users
 
-   Returns a array of :js:class:`User` based on filters.
+   Returns a sequence of :js:class:`User` based on filters.
 
    :query name: The Username.
    :query email: The email address.

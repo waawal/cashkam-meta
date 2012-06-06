@@ -1,4 +1,4 @@
-Classified ad's
+Classified Ad's
 ---------------
 
 Get a list of ads

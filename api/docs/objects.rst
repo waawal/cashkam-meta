@@ -116,8 +116,8 @@ Ad Object
 
    Misc keystore.
 
-Other Objects
-=============
+Response Objects
+================
 
 Error Object
 ------------
@@ -134,14 +134,14 @@ Error Object
 
    Error code.
 
-GenericResponse Object
+Response Object
 ----------------------
 
-.. js:class:: GenericResponse()
+.. js:class:: Response()
 
    Generic Response
 
-.. js:data:: GenericResponse.response
+.. js:data:: Response.response
    
    Response to be parsed as JSON
 
