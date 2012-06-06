@@ -8,6 +8,18 @@ REST
 * http://www.ietf.org/rfc/rfc2616.txt
 * http://www.youtube.com/watch?v=YCcAE2SCQ6k
 
+RFC
+~~~
+
+* :http:method:`options`
+* :http:method:`head`
+* :http:method:`post`
+* :http:method:`get`
+* :http:method:`put`
+* :http:method:`patch`
+* :http:method:`delete`
+* :http:method:`trace`
+
 Appcelerator
 ------------
 
