@@ -135,7 +135,7 @@ Error Object
    Error code.
 
 Response Object
-----------------------
+---------------
 
 .. js:class:: Response()
 

@@ -23,7 +23,7 @@ Create a new user
 
 .. http:post:: /users
    
-   :form name: The username.
+   :form name: The Username.
    :form contact.address: Address.
    :form contact.phone: Phone number.
    :form contact.postalcode: Postal code.
