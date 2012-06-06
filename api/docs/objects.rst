@@ -23,16 +23,30 @@ UserObject
 .. code-block:: javascript
 
    true or false
+   
+.. js:data:: UserObject.active
 
+   Set to false when user has requested to be removed.  
+   
+.. code-block:: javascript
+
+   true or false
+   
 .. js:data:: UserObject.contact
 
    Contact details for user.  
 
 .. code-block:: javascript
 
-   {"address": "Kattvägen 7", "city": "Mjau", "phone": "08-12332101", "postalcode": "54230", "name": "Herr Katt", "email": "katt@katt.mjau", "country": "Kattlandet"}
+   {"address": "Kattvägen 7",
+    "city": "Mjau",
+    "phone": "08-12332101",
+    "postalcode": "54230",
+    "name": "Herr Katt",
+    "email": "katt@katt.mjau",
+    "country": "Kattlandet"}
    
-.. js:data:: UserObject.settings
+.. js:data:: UserObject.storage
 
    Misc keystore.
 
@@ -98,7 +112,7 @@ AdObject
 
    [["url", "url", "url", "url"]["url", "url", "url", "url"]]
 
-.. js:data:: AdObject.settings
+.. js:data:: AdObject.storage
 
    Misc keystore.
 

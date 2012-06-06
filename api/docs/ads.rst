@@ -6,7 +6,7 @@ Get a list of ads
 
 .. http:get:: /ads
 
-   Get a list of ads based on filters. Returns a array of :js:class:`AdObject` s.
+   Get a list of ads based on filters. Returns a sequence (array) of :js:class:`AdObject` s.
 
    **Example request**:
 
@@ -57,6 +57,7 @@ Get a list of ads
    :statuscode 200: Success!
    :statuscode 404: No ads found.
    :statuscode 400: when dependent queries are missing.
+   :returns: `sequence` of :js:class:`AdObject`
 
 Publish a ad
 ~~~~~~~~~~~~
