@@ -2,7 +2,7 @@
 
 
 AD_TEMPLATE = dict(
-id = None,
+#id = None,
 user = None,
 text = None,
 active = False,

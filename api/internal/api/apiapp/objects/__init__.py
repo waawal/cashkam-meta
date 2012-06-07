@@ -1,18 +1,38 @@
+""" MongoDB Schemas"""
+
 import datetime
 
-from mongokit import Connection, Document
+from mongokit import Document
 
-import ad
-import user
-import response
+#import ad
+#import user
+#import response
 
-mongo = Connection()
 
-@mongo.register
 class Ad(Document):
-    structure = ad.AD_TEMPLATE
+
+    structure = {
+        user = basestring,
+        text = basestring,
+        active = bool,
+        timestamp = datetime.datetime,
+        coords = list
+        region = list
+        media = list
+        storage = dict
+    }
+    required_fields = ['user', 'media']
+    #default_values = ad.AD_TEMPLATE
 
 
-@mongo.register
 class User(Document):
-    structure = user.USER_TEMPLATE
+
+    structure = {
+        'name' = basestring,
+        'subscription' = bool,
+        'active' = bool,
+        'contact' = dict,
+        'storage' = dict,
+    }
+    required_fields = ['name']
+    #default_values = user.USER_TEMPLATE
