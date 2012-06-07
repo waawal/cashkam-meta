@@ -79,7 +79,7 @@ Ad Object
 
    true or false
    
-.. js:data:: Ad.datetime
+.. js:data:: Ad.timestamp
    
    When the ad was published (UTC)
    
