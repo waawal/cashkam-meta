@@ -1,5 +1,14 @@
 """ Returns a mapping representing the objects. """
 
+
+USER_TEMPLATE = dict(
+name = None,
+subscription = None,
+active = False,
+contact = {},
+storage = {},
+)
+
 def User(name=None, subscription=False, active=True,
          contact=None, storage=None):
     """ Returns a mapping representing a user. """
