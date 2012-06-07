@@ -27,7 +27,14 @@ class User(Document):
         'name' = basestring,
         'subscription' = bool,
         'active' = bool,
-        'contact' = dict,
+        'contact' = {"address": basestring,
+                     "city": basestring,
+                     "phone": basestring,
+                     "postalcode": basestring,
+                     "name": basestring,
+                     "email": basestring,
+                     "country": basestring
+                     },
         'storage' = dict,
         'created' = datetime.datetime,
     }
