@@ -45,7 +45,11 @@ User Object
     "name": "Herr Katt",
     "email": "katt@katt.mjau",
     "country": "Kattlandet"}
+
+.. js:data:: Ad.created
    
+   timedate when user was created (UTC)
+      
 .. js:data:: User.storage
 
    Misc keystore.
@@ -59,7 +63,7 @@ Ad Object
 
    A object representing a ad.
 
-.. js:data:: Ad.id
+.. js:data:: Ad._id
    
    The id of the ad.
 
