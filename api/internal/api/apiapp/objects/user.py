@@ -21,7 +21,7 @@ def User(name=None, subscription=False, active=True,
                    "email": None,
                    "country": None}
     if storage is None:
-        storage = []
+        storage = {}
     user = dict(name=name, subscription=subscription, active=active,
                 contact=contact, storage=storage)
     return user
