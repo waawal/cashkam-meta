@@ -1,1 +1,1 @@
-from mongo import Ad, User
+#from mongo import Ad, User
