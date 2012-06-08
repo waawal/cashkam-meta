@@ -46,7 +46,7 @@ User Object
     "email": "katt@katt.mjau",
     "country": "Kattlandet"}
 
-.. js:data:: Ad.created
+.. js:data:: Ad.timestamp
    
    timedate when user was created (UTC)
       

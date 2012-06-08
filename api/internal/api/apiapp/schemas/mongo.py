@@ -5,23 +5,30 @@ import datetime
 from mongokit import Document
 
 
-class Ad(Document):
+class CashKameraBase(Document):
+
+    structure = {
+        'timestamp' = datetime.datetime,
+    }
+    default_values = {'timestamp': datetime.datetime.utcnow}
+
+
+class Ad(CashKameraBase):
 
     structure = {
         'user' = basestring,
         'text' = basestring,
         'active' = bool,
-        'timestamp' = datetime.datetime,
         'coords' = list,
         'region' = list,
         'media' = list,
         'storage' = dict,
     }
     required_fields = ['user', 'media']
-    default_values = {'timestamp': datetime.datetime.utcnow}
+    default_values = {'active': False}
 
 
-class User(Document):
+class User(CashKameraBase):
 
     structure = {
         'name' = basestring,
@@ -36,8 +43,6 @@ class User(Document):
                      "country": basestring
                      },
         'storage' = dict,
-        'created' = datetime.datetime,
     }
     required_fields = ['name']
-    default_values = {'subscription': False, 'active': True,
-                      'created': datetime.datetime.utcnow}
+    default_values = {'subscription': False, 'active': True,}
