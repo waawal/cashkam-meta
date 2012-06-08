@@ -26,9 +26,10 @@ Get a list of ads
 
       [
         {
-          "id": fsdfg342fds,
+          "_id": fsdfg342fds,
           "user": "supercoolusername",
           "active": true,
+          "text": "Small shed.\n Cute!",
           "text": "Small shed",
           "media": [["http://akamai.cashk.am/images/fsdfd98fdas_square.jpg", http://akamai.cashk.am/images/fsdfd98fdas_s.jpg, http://akamai.cashk.am/images/fsdfd98fdas_m.jpg, http://akamai.cashk.am/images/fsdfd98fdas.jpg]],
           "timestamp": 1338882525,
@@ -36,10 +37,11 @@ Get a list of ads
           "region": ["uk", "london", "london"]
         },
         {
-          "id": fsdfg242fds,
+          "_id": fsdfg242fds,
           "user": "supercoolusername",
           "active": true,
           "text": null,
+          "title": null,
           "media": [["http://akamai.cashk.am/images/fsdfd98fdas_square.jpg", http://akamai.cashk.am/images/fsdfd98fdas_s.jpg, http://akamai.cashk.am/images/fsdfd98fdas_m.jpg, http://akamai.cashk.am/images/fsdfd98fdas.jpg]],
           "timestamp": 1338882525,
           "coords": [51.500611, 0.124611],

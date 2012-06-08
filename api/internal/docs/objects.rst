@@ -75,6 +75,10 @@ Ad Object
    
    The ad text.
 
+.. js:data:: Ad.title
+   
+   The title of the ad.
+   
 .. js:data:: Ad.active
    
    True if the ad is active.
