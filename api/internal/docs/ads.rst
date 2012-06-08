@@ -30,7 +30,7 @@ Get a list of ads
           "user": "supercoolusername",
           "active": true,
           "text": "Small shed.\n Cute!",
-          "text": "Small shed",
+          "title": "Small shed",
           "media": [["http://akamai.cashk.am/images/fsdfd98fdas_square.jpg", http://akamai.cashk.am/images/fsdfd98fdas_s.jpg, http://akamai.cashk.am/images/fsdfd98fdas_m.jpg, http://akamai.cashk.am/images/fsdfd98fdas.jpg]],
           "timestamp": 1338882525,
           "coords": [51.500611, 0.124611],
