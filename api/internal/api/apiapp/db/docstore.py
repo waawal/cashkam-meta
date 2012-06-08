@@ -18,6 +18,7 @@ class Ad(CashKameraBase):
     structure = {
         'user' = basestring,
         'text' = basestring,
+        'title' = basestring,
         'active' = bool,
         'coords' = list,
         'region' = list,
