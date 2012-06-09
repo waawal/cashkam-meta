@@ -29,8 +29,7 @@ def post_auth(username, password):
     authtoken = auth_hash(username, password)
     if con.setnx(":".join((USERS_PREFIX, username)), # Possibly better as a pipe
                  ":".join((AUTH_PREFIX, authtoken))):
-        result = con.setnx(":".join((AUTH_PREFIX, authtoken)), username)
-        return result
+        return con.setnx(":".join((AUTH_PREFIX, authtoken)), username)
     return False
 
 def put_auth(username, password, newPassword):
