@@ -1,1 +1,2 @@
-#from mongo import Ad, User
+from docstore import con as docs
+from keystore import con as keys
