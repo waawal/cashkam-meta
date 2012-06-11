@@ -1,4 +1,5 @@
 
+from bottle import HTTPError
 
 def get_ads():
     pass
