@@ -22,7 +22,7 @@ def get_auth(username, password):
     """ Tries to get the authentication token."""
     authtoken = auth_hash(username, password)
     if con.get(":".join((AUTH_PREFIX, authtoken))) == username:
-    return authtoken
+        return authtoken
 
 def post_auth(username, password):
     """ Creates a hash token and sets a rediskey.
