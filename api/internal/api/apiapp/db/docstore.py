@@ -2,7 +2,9 @@
 
 import datetime
 
-from mongokit import Document
+from mongokit import Document, Connection
+
+connection = Connection()
 
 
 class CashKameraBase(Document):
@@ -13,6 +15,7 @@ class CashKameraBase(Document):
     default_values = {'timestamp': datetime.datetime.utcnow}
 
 
+@connection.register
 class Ad(CashKameraBase):
 
     structure = {
@@ -29,6 +32,7 @@ class Ad(CashKameraBase):
     default_values = {'active': False}
 
 
+@connection.register
 class User(CashKameraBase):
 
     structure = {
@@ -47,3 +51,4 @@ class User(CashKameraBase):
     }
     required_fields = ['name']
     default_values = {'subscription': False, 'active': True,}
+
