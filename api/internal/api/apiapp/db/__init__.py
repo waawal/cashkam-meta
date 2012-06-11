@@ -1,2 +1,2 @@
-from docstore import con as docs
-import keystore
+#from docstore import connection as docs
+#import keystore
