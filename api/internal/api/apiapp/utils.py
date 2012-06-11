@@ -12,7 +12,7 @@ def requires_auth(f):
         invalid, a 401 is raised.
     """
     def wrapper(*args, **kwargs)
-        token = request.headers.get('token')
+        token = request.get_header('token')
         if not token:
             raise HTTPError(401)
         else:
@@ -26,3 +26,6 @@ def requires_auth(f):
                 else:
                     return f(*args, **kwargs)
     return wrapper
+
+def validate_queries(quarymapping)
+    pass
