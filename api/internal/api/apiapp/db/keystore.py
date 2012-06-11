@@ -44,12 +44,7 @@ def put_auth(username, password, newPassword):
     return False
 
 def check_auth(token):
-    result = con.get(":".join((AUTH_PREFIX, token)))
-    try:
-        result = json.loads(result)
-    except:
-        return False
-    return result
+    return con.get(":".join((AUTH_PREFIX, token)))
 
 class KeyStore(object):
     """ Pure namespace class """
