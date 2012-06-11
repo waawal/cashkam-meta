@@ -35,5 +35,5 @@ def setup_routing(app):
     app.route('/users', method=['GET'], callback=users.get_users)
     app.route('/users', method=['POST'], callback=users.get_users)
 
-app = Bottle()
+app = bottle.Bottle()
 setup_routing(app)
