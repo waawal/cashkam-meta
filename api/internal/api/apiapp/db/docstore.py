@@ -16,6 +16,9 @@ class CashKameraBase(Document):
 @con.register
 class Ad(CashKameraBase):
 
+    __database__ = 'ad_db'
+    __collection__ = 'ads'
+
     structure = {
         'user': basestring,
         'text': basestring,
@@ -32,6 +35,9 @@ class Ad(CashKameraBase):
 
 @con.register
 class User(CashKameraBase):
+
+    __database__ = 'user_db'
+    __collection__ = 'users'
 
     structure = {
         'name': basestring,
@@ -50,3 +56,5 @@ class User(CashKameraBase):
     required_fields = ['name']
     default_values = {'subscription': False, 'active': True,}
 
+ad = con.ad_db.ads.Ad
+user = con.user_db.users.User
