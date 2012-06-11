@@ -4,7 +4,7 @@ import datetime
 
 from mongokit import Document, Connection
 
-connection = Connection()
+con = Connection()
 
 
 class CashKameraBase(Document):
@@ -13,7 +13,7 @@ class CashKameraBase(Document):
     default_values = {'timestamp': datetime.datetime.utcnow}
 
 
-@connection.register
+@con.register
 class Ad(CashKameraBase):
 
     structure = {
@@ -30,7 +30,7 @@ class Ad(CashKameraBase):
     default_values = {'active': False}
 
 
-@connection.register
+@con.register
 class User(CashKameraBase):
 
     structure = {

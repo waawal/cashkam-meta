@@ -41,3 +41,12 @@ def put_auth(username, password, newPassword):
         return con.rename(":".join((AUTH_PREFIX, authtoken)),
                           ":".join((AUTH_PREFIX, newauthtoken)))
     return False
+
+class KeyStore(object):
+    """ Pure namespace class """
+    auth_hash = auth_hash
+    get_auth = get_auth
+    post_auth = post_auth
+    put_auth = put_auth
+
+key_store = KeyStore()
