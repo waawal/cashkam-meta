@@ -1,2 +1,2 @@
 from docstore import con as doc_store
-from keystore import key_store
+import keystore as key_store

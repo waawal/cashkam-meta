@@ -10,18 +10,19 @@ import redis
 AUTH_PREFIX = "auth"
 USERS_PREFIX = "users"
 
-con = redis.ConnectionPool()
+pool = redis.ConnectionPool()
+con = redis.Redis(connection_pool=pool)
 
 def auth_hash(username, password):
     """ Calculates the hash and returns it """
     token = ":".join((username, password))
-    return hashlib.sha512(token).hexdigest()
+    return hashlib.sha224(token).hexdigest()
 
 def get_auth(username, password):
     """ Tries to get the authentication token."""
     authtoken = auth_hash(username, password)
-    result = con.get(":".join((AUTH_PREFIX, authtoken)))
-    return json.loads(result)
+    if con.get(":".join((AUTH_PREFIX, authtoken))) == username:
+    return authtoken
 
 def post_auth(username, password):
     """ Creates a hash token and sets a rediskey.
@@ -30,7 +31,8 @@ def post_auth(username, password):
     authtoken = auth_hash(username, password)
     if con.setnx(":".join((USERS_PREFIX, username)), # Possibly better as a pipe
                  ":".join((AUTH_PREFIX, authtoken))):
-        return con.setnx(":".join((AUTH_PREFIX, authtoken)), username)
+        con.setnx(":".join((AUTH_PREFIX, authtoken)), username)
+        return authtoken
     return False
 
 def put_auth(username, password, newPassword):
@@ -46,13 +48,3 @@ def put_auth(username, password, newPassword):
 def check_auth(token):
     return con.get(":".join((AUTH_PREFIX, token)))
 
-class KeyStore(object):
-    """ Pure namespace class """
-    auth_hash = auth_hash
-    get_auth = get_auth
-    post_auth = post_auth
-    put_auth = put_auth
-    
-    check_auth = check_auth
-
-key_store = KeyStore()
