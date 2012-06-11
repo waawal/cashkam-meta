@@ -9,13 +9,12 @@ import db
 
 import ad
 import ads
-
 import auth
-
 import user
 import users
 
-def setup_routing(app):
+
+def setup_routing(apiapp):
     """ Routing. """
     app.route('/ad', method=['GET'], callback=ad.get_ad)
     app.route('/ad', method=['PUT'], callback=ad.put_ad)
@@ -35,5 +34,5 @@ def setup_routing(app):
     app.route('/users', method=['GET'], callback=users.get_users)
     app.route('/users', method=['POST'], callback=users.get_users)
 
-app = bottle.Bottle()
-setup_routing(app)
+apiapp = bottle.Bottle()
+setup_routing(apiapp)
