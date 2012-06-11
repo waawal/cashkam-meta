@@ -21,8 +21,8 @@ def setup_routing(app):
     app.route('/ad', method=['PUT'], callback=ad.put_ad)
     app.route('/ad', method=['DELETE'], callback=ad.del_ad)
     
-    app.route('/ads', method=['GET'], callback=ad.get_ads)
-    app.route('/ads', method=['POST'], callback=ad.post_ads)
+    app.route('/ads', method=['GET'], callback=ads.get_ads)
+    app.route('/ads', method=['POST'], callback=ads.post_ads)
     
     app.route('/auth', method=['GET'], callback=auth.get_auth)
     app.route('/auth', method=['POST'], callback=auth.post_auth)
