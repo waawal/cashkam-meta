@@ -1,7 +1,7 @@
 
 from bottle import HTTPError
 
-import db.keystore
+import db
 
 
 def get_auth(username, password):

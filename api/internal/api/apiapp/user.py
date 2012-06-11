@@ -1,6 +1,8 @@
 
 from bottle import HTTPError
 
+import db
+
 
 def get_user(username):
     pass
