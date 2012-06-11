@@ -2,6 +2,7 @@
 
 
 import hashlib
+import json
 
 import redis
 
@@ -20,7 +21,7 @@ def get_auth(username, password):
     """ Tries to get the authentication token."""
     authtoken = auth_hash(username, password)
     result = con.get(":".join((AUTH_PREFIX, authtoken)))
-    return result
+    return json.loads(result)
 
 def post_auth(username, password):
     """ Creates a hash token and sets a rediskey.
@@ -42,11 +43,21 @@ def put_auth(username, password, newPassword):
                           ":".join((AUTH_PREFIX, newauthtoken)))
     return False
 
+def check_auth(token):
+    result = con.get(":".join((AUTH_PREFIX, token)))
+    try:
+        result = json.loads(result)
+    except:
+        return False
+    return result
+
 class KeyStore(object):
     """ Pure namespace class """
     auth_hash = auth_hash
     get_auth = get_auth
     post_auth = post_auth
     put_auth = put_auth
+    
+    check_auth = check_auth
 
 key_store = KeyStore()
