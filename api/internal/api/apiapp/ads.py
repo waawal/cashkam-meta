@@ -2,10 +2,12 @@
 from bottle import HTTPError
 
 import db
+from utils import requires_auth
 
 
 def get_ads():
     pass
 
-def post_ads():
+@requires_auth
+def post_ads(authed):
     pass
