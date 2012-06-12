@@ -34,6 +34,8 @@ def validate_queries(reference):
     params = set(request.params.keys())
     if isinstance(reference, Mapping):
         reference = set(reference.keys())
+    elif isinstance(reference, basestring):
+        reference = set([reference])
     else:
         reference = set(reference)
     if params.issubset(reference):
