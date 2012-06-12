@@ -34,6 +34,6 @@ def setup_routing(app):
     app.route('/users', method=['GET'], callback=users.get_users)
     app.route('/users', method=['POST'], callback=users.get_users)
 
-apiapp = bottle.Bottle()
+apiapp = bottle.Bottle(autojson=True)
 setup_routing(apiapp)
 bottle.run(apiapp, host='localhost', port=8080)
