@@ -14,10 +14,12 @@ def get_user(name):
 
 @requires_auth
 def put_user(name, authed):
+    validate_queries(db.doc_store.User.structure)
     pass
 
 @requires_auth
 def del_user(name, authed):
     validate_queries('name')
+    # TODO: Deactivate User and remove auth
     pass
 

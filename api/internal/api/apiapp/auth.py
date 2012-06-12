@@ -16,7 +16,7 @@ def get_auth():
 def post_auth():
     r = validate_queries(['name','password'])
     result = db.key_store.post_auth(r['name'], r['password'])
-    if result:
+    if result: # TODO: Should create a new User()
         return result
     else:
         raise HTTPError(409, "Username already in use.")
