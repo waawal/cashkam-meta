@@ -41,8 +41,9 @@ def put_auth(username, password, newPassword):
     newauthtoken = auth_hash(username, newPassword)
     if con.set(":".join((USERS_PREFIX, username)), # Possibly better as a pipe
                ":".join((AUTH_PREFIX, newauthtoken))):
-        return con.rename(":".join((AUTH_PREFIX, authtoken)),
-                          ":".join((AUTH_PREFIX, newauthtoken)))
+        con.rename(":".join((AUTH_PREFIX, authtoken)),
+                   ":".join((AUTH_PREFIX, newauthtoken)))
+        return newauthtoken
     return False
 
 def check_auth(token):

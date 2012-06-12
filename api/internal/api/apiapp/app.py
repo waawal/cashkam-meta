@@ -1,6 +1,8 @@
 """ The main WSGI-app """
 
 import json
+import pdb
+from collections import defaultdict
 
 import bottle
 
@@ -36,4 +38,13 @@ def setup_routing(app):
 
 apiapp = bottle.Bottle(autojson=True)
 setup_routing(apiapp)
+
+
+@apiapp.error(401)
+@apiapp.error(404)
+@apiapp.error(400)
+def json_error(e):
+    bottle.response.headers['Content-Type'] = 'application/json'
+    return 'error'
+
 bottle.run(apiapp, host='localhost', port=8080)
