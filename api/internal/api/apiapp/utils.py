@@ -1,6 +1,7 @@
 
 import inspect
 from functools import wraps
+from collections import Mapping
 
 from bottle import HTTPError, request
 
@@ -11,6 +12,8 @@ def requires_auth(f):
         the username if the callback asked for it. if `token`is missing or
         invalid, a 401 is raised.
     """
+    
+    @wraps(f)
     def wrapper(*args, **kwargs):
         token = request.get_header('token')
         if not token:
@@ -27,5 +30,13 @@ def requires_auth(f):
                     return f(*args, **kwargs)
     return wrapper
 
-def validate_queries(quarymapping):
-    pass
+def validate_queries(reference):
+    params = set(request.params.keys())
+    if isinstance(reference, Mapping):
+        reference = set(reference.keys())
+    else:
+        reference = set(reference)
+    if params.issubset(reference):
+        return True
+    else:
+        raise HTTPError(400)
