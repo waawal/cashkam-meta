@@ -31,6 +31,8 @@ def requires_auth(f):
     return wrapper
 
 def validate_queries(reference):
+    # TODO: Rewrite to check for args instead???
+    # That would make it more dynamic, also maybe make it a decorator?
     params = set(request.params.keys())
     if isinstance(reference, Mapping):
         reference = set(reference.keys())
