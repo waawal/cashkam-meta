@@ -39,6 +39,8 @@ def validate_queries(reference):
     else:
         reference = set(reference)
     if params.issubset(reference):
-        return True
+        returnedkeys = params.intersection(reference)
+        return dict([(k, v)for k, v in request.params.items()
+                    if k in returnedkeys])
     else:
         raise HTTPError(400)
