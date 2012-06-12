@@ -6,8 +6,8 @@ from utils import requires_auth, validate_queries
 
 
 def get_auth():
-    validate_queries(['name','password'])
-    result = db.keystore.get_auth(username, password)
+    r = validate_queries(['name','password'])
+    result = db.keystore.get_auth(r['name'], r['password'])
     if result:
         return result
     else:
