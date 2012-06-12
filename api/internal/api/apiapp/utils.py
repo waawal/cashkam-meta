@@ -11,7 +11,7 @@ def requires_auth(f):
         the username if the callback asked for it. if `token`is missing or
         invalid, a 401 is raised.
     """
-    def wrapper(*args, **kwargs)
+    def wrapper(*args, **kwargs):
         token = request.get_header('token')
         if not token:
             raise HTTPError(401)
@@ -27,5 +27,5 @@ def requires_auth(f):
                     return f(*args, **kwargs)
     return wrapper
 
-def validate_queries(quarymapping)
+def validate_queries(quarymapping):
     pass
