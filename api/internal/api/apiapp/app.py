@@ -16,9 +16,9 @@ import users
 
 def setup_routing(app):
     """ Routing. """
-    app.route('/ad/:id', method=['GET'], callback=ad.get_ad)
-    app.route('/ad/:id', method=['PUT'], callback=ad.put_ad)
-    app.route('/ad/:id', method=['DELETE'], callback=ad.del_ad)
+    app.route('/ad/:adid', method=['GET'], callback=ad.get_ad)
+    app.route('/ad/:adid', method=['PUT'], callback=ad.put_ad)
+    app.route('/ad/:adid', method=['DELETE'], callback=ad.del_ad)
     
     app.route('/ads', method=['GET'], callback=ads.get_ads)
     app.route('/ads', method=['POST'], callback=ads.post_ads)
@@ -36,3 +36,4 @@ def setup_routing(app):
 
 apiapp = bottle.Bottle()
 setup_routing(apiapp)
+bottle.run(apiapp, host='localhost', port=8080)
