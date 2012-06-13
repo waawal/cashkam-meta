@@ -8,7 +8,7 @@ from utils import requires_auth, validate_queries
 def get_user(name):
     validate_queries('name')
     try:
-        return db.doc_store.user.one({'name':name}).to_json()
+        return db.user.one({'name':name}).to_json()
     except: # TODO: Bug! one raises exception if > 1
         raise HTTPError(404, "user_not_found")
 
@@ -16,7 +16,7 @@ def get_user(name):
 def put_user(name, authed):
     r = validate_queries(db.doc_store.User.structure)
     if name == authed:
-        user = db.doc_store.user.one({'name':name})
+        user = db.user.one({'name':name})
         if not user:
             raise HTTPError404
         user.update(r)
