@@ -43,12 +43,12 @@ class User(CashKameraBase):
         'name': basestring,
         'subscription': bool,
         'active': bool,
+        'email': basestring,
         'contact': {"address": basestring,
                      "city": basestring,
                      "phone": basestring,
                      "postalcode": basestring,
                      "name": basestring,
-                     "email": basestring,
                      "country": basestring
                      },
         'storage': dict,
