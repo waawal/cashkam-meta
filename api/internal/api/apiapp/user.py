@@ -10,7 +10,7 @@ def get_user(name):
     try:
         return db.doc_store.user.one({'name':name}).to_json()
     except: # TODO: Bug! one raises exception if > 1
-        raise HTTPError(404)
+        raise HTTPError(404, "user_not_found")
 
 @requires_auth
 def put_user(name, authed):

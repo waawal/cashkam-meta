@@ -45,6 +45,8 @@ setup_routing(apiapp)
 @apiapp.error(400)
 def json_error(e):
     bottle.response.headers['Content-Type'] = 'application/json'
-    return 'error'
+    #>>> e.message
+    #'HTTP Response 404'
+    return json.dumps({'code': e.status, 'message': e.output})
 
 bottle.run(apiapp, host='localhost', port=8080)
