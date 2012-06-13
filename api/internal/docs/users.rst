@@ -30,7 +30,7 @@ Create a new user
    :form contact.country: Country.
    :form contact.city: City.
    :form contact.name: The real name of the user.
-   :form contact.email: email address of the user.
+   :form email: email address of the user.
    :statuscode 200: Success!
    :status 409: Username already in use.
 
@@ -54,13 +54,13 @@ Modify user details
 .. http:put:: /user/(str:name)
 
    :query name: The Username.
-   :query contact.address: Address.
-   :query contact.phone: Phone number.
-   :query contact.postalcode: Postal code.
-   :query contact.country: Country.
-   :query contact.city: City.
-   :query contact.name: The real name of the user.
-   :query contact.email: email address of the user.
+   :form contact.address: Address.
+   :form contact.phone: Phone number.
+   :form contact.postalcode: Postal code.
+   :form contact.country: Country.
+   :form contact.city: City.
+   :form contact.name: The real name of the user.
+   :form email: email address of the user.
    :statuscode 403: User is not permitted to change details.
    :statuscode 401: Not logged in.
    :statuscode 404: :js:data:`User.name` not found.

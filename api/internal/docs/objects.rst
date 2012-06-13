@@ -32,6 +32,10 @@ User Object
 
    true or false
    
+.. js:data:: User.email
+
+   Email-address.  
+   
 .. js:data:: User.contact
 
    Contact details for user.  
@@ -43,7 +47,6 @@ User Object
     "phone": "08-12332101",
     "postalcode": "54230",
     "name": "Herr Katt",
-    "email": "katt@katt.mjau",
     "country": "Kattlandet"}
 
 .. js:data:: User.timestamp
@@ -57,7 +60,7 @@ User Object
 Ad Object
 ---------
 
-:http:get:`/ads`, :http:get:`/ad/(str:id)`
+:http:get:`/ads`, :http:get:`/ad/(str:_id)`
 
 .. js:class:: Ad
 

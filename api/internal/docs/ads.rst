@@ -82,7 +82,7 @@ Publish a ad
 Get ad details
 ~~~~~~~~~~~~~~
 
-.. http:get:: /ad/(str:id)
+.. http:get:: /ad/(str:_id)
 
    Get all the details from a :js:data:`Ad._id`.
    
@@ -93,7 +93,7 @@ Get ad details
 Modify a ad
 ~~~~~~~~~~~
 
-.. http:put:: /ad/(str:id)
+.. http:put:: /ad/(str:_id)
    
    Changes/adds to a already published ad.
 
@@ -108,7 +108,7 @@ Modify a ad
 Remove a ad
 ~~~~~~~~~~~
 
-.. http:delete:: /ad/(str:id)
+.. http:delete:: /ad/(str:_id)
    
    Deactivates a ad. Ads are never removed/deleted per se.
    
