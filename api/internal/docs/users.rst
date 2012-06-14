@@ -1,10 +1,11 @@
+=====
 Users
------
+=====
 
 Users can be created based on several origins. The authentication part is therefore to be found in the :http:get:`/auth` method. All details and information however lives in the user object.
 
 Find users
-~~~~~~~~~~
+----------
 
 .. http:get:: /users
 
@@ -18,8 +19,8 @@ Find users
    :statuscode 200: Success!
    :returns: A sequence of :js:class:`User`
 
-Create a new user
-~~~~~~~~~~~~~~~~~
+Create a new user and user details
+----------------------------------
 
 .. http:post:: /users
    
@@ -34,6 +35,9 @@ Create a new user
    :statuscode 200: Success!
    :status 409: Username already in use.
 
+Contact details
+~~~~~~~~~~~~~~~
+
 .. http:post:: /user/(str:name)/contact
 
    :query name: The Username.
@@ -46,6 +50,9 @@ Create a new user
    :statuscode 401: Not logged in.
    :statuscode 404: :js:data:`User.name` not found.
    :statuscode 200: Success!
+
+Generic Key Storage
+~~~~~~~~~~~~~~~~~~~
 
 .. http:post:: /user/(str:name)/storage
 
@@ -70,7 +77,10 @@ Get user details
    :returns: :js:class:`User`
 
 Modify user details
-~~~~~~~~~~~~~~~~~~~
+-------------------
+
+E-mail address
+~~~~~~~~~~~~~~
 
 .. http:put:: /user/(str:name)
 
@@ -80,6 +90,9 @@ Modify user details
    :statuscode 401: Not logged in.
    :statuscode 404: :js:data:`User.name` not found.
    :statuscode 200: Success!
+
+Contact details
+~~~~~~~~~~~~~~~
 
 .. http:put:: /user/(str:name)/contact
 
@@ -94,6 +107,9 @@ Modify user details
    :statuscode 404: :js:data:`User.name` not found.
    :statuscode 200: Success!
 
+Generic Key Storage
+~~~~~~~~~~~~~~~~~~~
+
 .. http:put:: /user/(str:name)/storage
 
    :query name: The Username.
@@ -104,7 +120,7 @@ Modify user details
    :statuscode 200: Success!
 
 Remove a user
-~~~~~~~~~~~~~
+-------------
 
 .. http:delete:: /user/(str:name)
    

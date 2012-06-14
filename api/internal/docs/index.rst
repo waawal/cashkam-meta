@@ -19,7 +19,7 @@ Methods and Objects
 +-------------------------+--------------------------------+
 |                         |                                |
 |.. toctree::             |.. toctree::                    |
-|   :maxdepth: 2          |   :maxdepth: 3                 |
+|   :maxdepth: 3          |   :maxdepth: 3                 |
 |                         |                                |
 |   authentication        |   objects                      |
 |   users                 |                                |
