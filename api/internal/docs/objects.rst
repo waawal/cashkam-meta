@@ -46,7 +46,7 @@ User Object
     "city": "Mjau",
     "phone": "08-12332101",
     "postalcode": "54230",
-    "name": "Herr Katt",
+    "realname": "Herr Katt",
     "country": "Kattlandet"}
 
 .. js:data:: User.timestamp
