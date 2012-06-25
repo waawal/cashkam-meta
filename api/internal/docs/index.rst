@@ -23,6 +23,7 @@ Methods and Objects
 |                         |                                |
 |   authentication        |   objects                      |
 |   users                 |                                |
+|   contacts              |                                |
 |   ads                   |                                |
 +-------------------------+--------------------------------+
 
