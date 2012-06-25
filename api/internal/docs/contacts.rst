@@ -110,3 +110,14 @@ Get Contact city
    :statuscode 401: Not logged in.
    :statuscode 404: :js:data:`User.name` not found.
    :statuscode 200: Success!
+
+Remove a contact
+----------------
+
+.. http:delete:: /contacts/(str:name)
+   
+   :query name: The Username.
+   :statuscode 403: User is not permitted to do that.
+   :statuscode 401: Not logged in.
+   :statuscode 404: :js:data:`User.name` not found.
+   :statuscode 200: Success!
