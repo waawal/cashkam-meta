@@ -25,48 +25,14 @@ Create a new user and user details
 .. http:post:: /users
    
    :form name: The Username.
-   :form contact.address: Address.
-   :form contact.phone: Phone number.
-   :form contact.postalcode: Postal code.
-   :form contact.country: Country.
-   :form contact.city: City.
-   :form contact.name: The real name of the user.
    :form email: email address of the user.
    :statuscode 200: Success!
    :status 409: Username already in use.
 
-Contact details
-~~~~~~~~~~~~~~~
-
-.. http:post:: /user/(str:name)/contact
-
-   :query name: The Username.
-   :form address: Address.
-   :form phone: Phone number.
-   :form postalcode: Postal code.
-   :form country: Country.
-   :form city: City.
-   :statuscode 403: User is not permitted to change details.
-   :statuscode 401: Not logged in.
-   :statuscode 404: :js:data:`User.name` not found.
-   :statuscode 200: Success!
-
-Generic Key Storage
-~~~~~~~~~~~~~~~~~~~
-
-.. http:post:: /user/(str:name)/storage
-
-   :query name: The Username.
-   :form key: Can be any string, sets the key to the submitted value.
-   :statuscode 403: User is not permitted to change details.
-   :statuscode 401: Not logged in.
-   :statuscode 404: :js:data:`User.name` not found.
-   :statuscode 200: Success!
-
 Get user details
 ~~~~~~~~~~~~~~~~
 
-.. http:get:: /user/(str:name)
+.. http:get:: /users/(str:name)
 
    Returns a :js:class:`User`.
    
@@ -82,7 +48,7 @@ Modify user details
 E-mail address
 ~~~~~~~~~~~~~~
 
-.. http:put:: /user/(str:name)
+.. http:put:: /users/(str:name)
 
    :query name: The Username.
    :form email: email address of the user.
@@ -91,38 +57,10 @@ E-mail address
    :statuscode 404: :js:data:`User.name` not found.
    :statuscode 200: Success!
 
-Contact details
-~~~~~~~~~~~~~~~
-
-.. http:put:: /user/(str:name)/contact
-
-   :query name: The Username.
-   :form address: Address.
-   :form phone: Phone number.
-   :form postalcode: Postal code.
-   :form country: Country.
-   :form city: City.
-   :statuscode 403: User is not permitted to change details.
-   :statuscode 401: Not logged in.
-   :statuscode 404: :js:data:`User.name` not found.
-   :statuscode 200: Success!
-
-Generic Key Storage
-~~~~~~~~~~~~~~~~~~~
-
-.. http:put:: /user/(str:name)/storage
-
-   :query name: The Username.
-   :form key: Can be any string, sets the key to the submitted value.
-   :statuscode 403: User is not permitted to change details.
-   :statuscode 401: Not logged in.
-   :statuscode 404: :js:data:`User.name` not found.
-   :statuscode 200: Success!
-
 Remove a user
 -------------
 
-.. http:delete:: /user/(str:name)
+.. http:delete:: /users/(str:name)
    
    :query name: The Username.
    :statuscode 403: User is not permitted to do that (for some reason...).

@@ -6,7 +6,7 @@ CashKamera Internal API documentation
 :Info: See `cashkam-backend <http://git.massforstroel.se/cashkam-backend>`_ for the latest source.
 :Author: Daniel Waardal <daniel@massforstroel.se>
 
-This is the internal documentation of the REST-like API for communication between the various frontends and the CashKamera backend.
+This is the internal documentation of the REST-like API for communication between the various frontends and the CashKamera backend. The default format for values returned is `application/json`.
 
 ..  note::
     This API is subject to change until first Beta release.
