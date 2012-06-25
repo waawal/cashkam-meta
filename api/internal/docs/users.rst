@@ -19,8 +19,8 @@ Find users
    :statuscode 200: Success!
    :returns: A sequence of :js:class:`User`
 
-Create a new user and user details
-----------------------------------
+Create a new user
+-----------------
 
 .. http:post:: /users
    
@@ -28,19 +28,6 @@ Create a new user and user details
    :form email: email address of the user.
    :statuscode 200: Success!
    :status 409: Username already in use.
-
-Get user details
-~~~~~~~~~~~~~~~~
-
-.. http:get:: /users/(str:name)
-
-   Returns a :js:class:`User`.
-   
-   :query name: The Username.
-   :statuscode 404: :js:data:`User.name` not found.
-   :statuscode 200: Success!
-   :statuscode 401: Not logged in.
-   :returns: :js:class:`User`
 
 Modify user details
 -------------------
@@ -56,6 +43,19 @@ E-mail address
    :statuscode 401: Not logged in.
    :statuscode 404: :js:data:`User.name` not found.
    :statuscode 200: Success!
+
+Get user details
+----------------
+
+.. http:get:: /users/(str:name)
+
+   Returns a :js:class:`User`.
+   
+   :query name: The Username.
+   :statuscode 404: :js:data:`User.name` not found.
+   :statuscode 200: Success!
+   :statuscode 401: Not logged in.
+   :returns: :js:class:`User`
 
 Remove a user
 -------------
