@@ -104,6 +104,22 @@ Ad
    
    true if the ad is set to auction status.
 
+.. code-block:: javascript
+   
+   true or false
+
+.. js:data:: Ad.bids
+
+   A Array of arrays containing all bids.
+   
+   * Amount
+   * Username
+   * Timestamp (UTC)
+
+.. code-block:: javascript
+
+   [[60, "kollo89", 816516847], [50, "anderskarlsson", 813542448,]]
+
 .. js:data:: Ad.expires
    
    When the ad should expire or (end of auction in case biddable is true) (UTC)
@@ -188,8 +204,6 @@ Media
    
    The image representing the ad in search-results etc.
    
-.. code-block:: javascript
-
    * square
    * small
    * normal
