@@ -92,6 +92,18 @@ Ad Object
    
    Published by :js:data:`User.name`
 
+.. js:data:: Ad.biddable
+   
+   true if the ad is set to auction status.
+
+.. js:data:: Ad.expires
+   
+   When the ad should expire or (end of auction in case biddable is true) (UTC)
+
+.. code-block:: javascript
+
+   true or false
+
 .. js:data:: Ad.text
    
    The ad text.
