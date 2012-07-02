@@ -39,7 +39,7 @@ User Object
 .. js:data:: User.timestamp
    
    timedate when user was created (UTC)
-      
+
 .. js:data:: User.storage
 
    Misc keystore.
@@ -50,6 +50,10 @@ Contact Object
 .. js:class:: Contact
 
    A object representing a user's contact information.
+
+.. js:data:: Contact.username
+
+   Username associated with this contact.
 
 .. js:data:: Contact.address
 
