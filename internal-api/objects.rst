@@ -1,7 +1,7 @@
 Main Objects
 ============
 
-`JSON`-notated objects returned by some of the API methods.
+`JSON`-notated objects returned by some of the API methods. Please note that this representation does not reflect the schemas used for the storage of this data.
 
 User Object
 -----------
@@ -55,14 +55,6 @@ Contact Object
 
    A object representing a user's contact information.
 
-.. js:data:: Contact._id
-   
-   The id of the Contact.
-
-.. js:data:: Contact.username
-
-   :js:data:`User.name` associated with this contact.
-
 .. js:data:: Contact.address
 
    Address details for user.  
@@ -103,6 +95,14 @@ Ad Object
 .. js:data:: Ad.user
    
    Published by :js:data:`User.name`
+
+.. js:data:: Ad.price
+   
+   Fixed price (or highest bid if auction).
+
+.. js:data:: Ad.currency
+   
+   Currency of the price
 
 .. js:data:: Ad.biddable
    
@@ -155,6 +155,14 @@ Ad Object
 .. js:data:: Ad.media
 
    Reference to :js:class:`Media` of the ad.
+
+.. js:data:: Ad.locale
+
+   The language of the ad.
+
+.. code-block:: javascript
+   
+   ["se","sv"]
 
 .. js:data:: Ad.storage
 
