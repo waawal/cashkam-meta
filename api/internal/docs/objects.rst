@@ -36,19 +36,6 @@ User Object
 
    Email-address.  
    
-.. js:data:: User.contact
-
-   Contact details for user.  
-
-.. code-block:: javascript
-
-   {"address": "Kattvägen 7",
-    "city": "Mjau",
-    "phone": "08-12332101",
-    "postalcode": "54230",
-    "realname": "Herr Katt",
-    "country": "Kattlandet"}
-
 .. js:data:: User.timestamp
    
    timedate when user was created (UTC)
@@ -56,6 +43,37 @@ User Object
 .. js:data:: User.storage
 
    Misc keystore.
+
+Contact Object
+--------------
+
+.. js:class:: Contact
+
+   A object representing a user's contact information.
+
+.. js:data:: Contact.address
+
+   Address details for user.  
+
+.. js:data:: Contact.city
+
+   City name of the user.  
+   
+.. js:data:: Contact.phone
+
+   Phone number in international format (without the + char).  
+
+.. js:data:: Contact.postalcode
+
+   Postal code/zip-code of the user.  
+
+.. js:data:: Contact.realname
+
+   The real name of the user.  
+   
+.. js:data:: Contact.country
+
+   Country of the user.
 
 Ad Object
 ---------
