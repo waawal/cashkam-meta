@@ -1,5 +1,5 @@
-Main Objects
-============
+Main Data
+=========
 
 `JSON`-notated objects returned by some of the API methods.
 
@@ -223,8 +223,8 @@ Media
 
    ["url", "url", "url", "url"]
 
-Response Objects
-================
+Response Data
+=============
 
 Error
 -----
