@@ -178,7 +178,6 @@ Media Object
 .. js:data:: Media.images
 
    All images except the main image.
-   
    * square
    * small
    * normal
