@@ -1,4 +1,0 @@
-""" Constants and templates """
-
-
-
