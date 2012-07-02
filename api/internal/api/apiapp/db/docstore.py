@@ -30,7 +30,7 @@ class Ad(CashKameraBase):
         'region': list,
         'media': {"main": list,
                   "images": list,
-                  }
+                  },
         'storage': dict,
     }
     required_fields = ['user']
