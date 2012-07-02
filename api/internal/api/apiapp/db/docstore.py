@@ -24,12 +24,16 @@ class Ad(CashKameraBase):
         'text': basestring,
         'title': basestring,
         'active': bool,
+        'biddable': bool,
+        'expires': datetime.datetime,
         'coords': list,
         'region': list,
-        'media': list,
+        'media': {"main": list,
+                  "images": list,
+                  }
         'storage': dict,
     }
-    required_fields = ['user', 'media']
+    required_fields = ['user']
     default_values = {'active': False}
 
 
@@ -49,7 +53,8 @@ class User(CashKameraBase):
                      "phone": basestring,
                      "postalcode": basestring,
                      "name": basestring,
-                     "country": basestring
+                     "country": basestring,
+                     "realname": basestring,
                      },
         'storage': dict,
     }
