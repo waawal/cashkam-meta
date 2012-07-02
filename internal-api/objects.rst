@@ -36,10 +36,6 @@ User Object
 
    Email-address.  
 
-.. js:data:: User.contacts
-
-   Reference to :js:data:`Contact._id` associated with the user.
-
 .. js:data:: User.timestamp
    
    timedate when user was created (UTC)
@@ -175,17 +171,10 @@ Media Object
 
    A object representing the media associated with a ad.
 
-.. js:data:: Media._id
-   
-   The id of the Media.
-
-.. js:data:: Media.ad
-
-   Associated with :js:data:`Ad._id`
-
 .. js:data:: Media.images
 
    All images except the main image.
+   
    * square
    * small
    * normal
@@ -209,8 +198,6 @@ Media Object
 .. code-block:: javascript
 
    ["url", "url", "url", "url"]
-
-   
 
 Response Objects
 ================
