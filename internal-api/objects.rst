@@ -1,14 +1,20 @@
 Main Objects
 ============
 
-`JSON`-notated objects returned by some of the API methods. Please note that this representation does not reflect the schemas used for the storage of this data.
+`JSON`-notated objects returned by some of the API methods.
+
+..  note::
+    Please note that this representation does not reflect the schemas used for the storage of this data.
 
 User
 ----
 
 :http:get:`/user/(str:name)`, :http:get:`/users`
 
-A Collection of user data. The index is the username (not _id!).
+A Collection of user data.
+
+..  note::
+    The index is the username (not _id!).
 
 .. js:class:: User
 
