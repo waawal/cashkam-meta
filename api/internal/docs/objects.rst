@@ -35,27 +35,57 @@ User Object
 .. js:data:: User.email
 
    Email-address.  
-   
-.. js:data:: User.contact
 
-   Contact details for user.  
+.. js:data:: User.contacts
 
-.. code-block:: javascript
-
-   {"address": "Kattvägen 7",
-    "city": "Mjau",
-    "phone": "08-12332101",
-    "postalcode": "54230",
-    "name": "Herr Katt",
-    "country": "Kattlandet"}
+   Reference to :js:data:`Contact._id` associated with the user.
 
 .. js:data:: User.timestamp
    
    timedate when user was created (UTC)
-      
+
 .. js:data:: User.storage
 
    Misc keystore.
+
+Contact Object
+--------------
+
+.. js:class:: Contact
+
+   A object representing a user's contact information.
+
+.. js:data:: Contact._id
+   
+   The id of the Contact.
+
+.. js:data:: Contact.username
+
+   :js:data:`User.name` associated with this contact.
+
+.. js:data:: Contact.address
+
+   Address details for user.  
+
+.. js:data:: Contact.city
+
+   City name of the user.  
+   
+.. js:data:: Contact.phone
+
+   Phone number in international format (without the + char).  
+
+.. js:data:: Contact.postalcode
+
+   Postal code/zip-code of the user.  
+
+.. js:data:: Contact.realname
+
+   The real name of the user.  
+   
+.. js:data:: Contact.country
+
+   Country of the user.
 
 Ad Object
 ---------
@@ -73,6 +103,18 @@ Ad Object
 .. js:data:: Ad.user
    
    Published by :js:data:`User.name`
+
+.. js:data:: Ad.biddable
+   
+   true if the ad is set to auction status.
+
+.. js:data:: Ad.expires
+   
+   When the ad should expire or (end of auction in case biddable is true) (UTC)
+
+.. code-block:: javascript
+
+   true or false
 
 .. js:data:: Ad.text
    
@@ -112,8 +154,30 @@ Ad Object
 
 .. js:data:: Ad.media
 
-   Images
+   Reference to :js:class:`Media` of the ad.
+
+.. js:data:: Ad.storage
+
+   Misc keystore.
+
+Media Object
+------------
+
+.. js:class:: Media
+
+   A object representing the media associated with a ad.
+
+.. js:data:: Media._id
    
+   The id of the Media.
+
+.. js:data:: Media.ad
+
+   Associated with :js:data:`Ad._id`
+
+.. js:data:: Media.images
+
+   All images except the main image.
    * square
    * small
    * normal
@@ -123,9 +187,22 @@ Ad Object
 
    [["url", "url", "url", "url"]["url", "url", "url", "url"]]
 
-.. js:data:: Ad.storage
+.. js:data:: Media.main
+   
+   The image representing the ad in search-results etc.
+   
+.. code-block:: javascript
 
-   Misc keystore.
+   * square
+   * small
+   * normal
+   * original
+
+.. code-block:: javascript
+
+   ["url", "url", "url", "url"]
+
+   
 
 Response Objects
 ================
