@@ -2,8 +2,8 @@
 Contacts
 ========
 
-Create Contact
---------------
+Create a Contact
+----------------
 
 .. http:post:: /contacts/(str:name)
 
@@ -18,8 +18,8 @@ Create Contact
    :statuscode 404: :js:data:`User.name` not found.
    :statuscode 200: Success!
 
-Modify Contact
---------------
+Modify a Contact
+----------------
 
 .. http:put:: /contacts/(str:name)
 
@@ -75,8 +75,8 @@ Get Contact phone number
    :statuscode 404: :js:data:`User.name` not found.
    :statuscode 200: Success!
    
-Get Contact postal code/ ZIP-code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get Contact postal code/ZIP-code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. http:get:: /contacts/(str:name)/postalcode
 
@@ -100,7 +100,7 @@ Get Contact country
    :statuscode 200: Success!
    
 Get Contact city
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. http:get:: /contacts/(str:name)/city
 
