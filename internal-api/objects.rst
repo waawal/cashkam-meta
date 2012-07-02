@@ -3,8 +3,8 @@ Main Objects
 
 `JSON`-notated objects returned by some of the API methods. Please note that this representation does not reflect the schemas used for the storage of this data.
 
-User Object
------------
+User
+----
 
 :http:get:`/user/(str:name)`, :http:get:`/users`
 
@@ -44,8 +44,8 @@ User Object
 
    Misc keystore.
 
-Contact Object
---------------
+Contact
+-------
 
 .. js:class:: Contact
 
@@ -75,8 +75,8 @@ Contact Object
 
    Country of the user.
 
-Ad Object
----------
+Ad
+--
 
 :http:get:`/ads`, :http:get:`/ad/(str:_id)`
 
@@ -164,8 +164,8 @@ Ad Object
 
    Misc keystore.
 
-Media Object
-------------
+Media
+-----
 
 .. js:class:: Media
 
@@ -202,8 +202,8 @@ Media Object
 Response Objects
 ================
 
-Error Object
-------------
+Error
+-----
 
 .. js:class:: Error()
 
@@ -217,8 +217,8 @@ Error Object
 
    Error code.
 
-Response Object
----------------
+Response
+--------
 
 .. js:class:: Response()
 
