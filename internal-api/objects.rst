@@ -8,6 +8,8 @@ User
 
 :http:get:`/user/(str:name)`, :http:get:`/users`
 
+A Collection of user data. The index is the username (not _id!).
+
 .. js:class:: User
 
    A object representing a user.
@@ -46,6 +48,8 @@ User
 
 Contact
 -------
+
+Contact details for a user.
 
 .. js:class:: Contact
 
@@ -198,7 +202,7 @@ Media
 
 .. code-block:: javascript
 
-   [["url", "url", "url", "url"]["url", "url", "url", "url"]]
+   [["url", "url", "url", "url"], ["url", "url", "url", "url"]]
 
 .. js:data:: Media.main
    
