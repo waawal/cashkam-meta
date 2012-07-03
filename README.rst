@@ -1,5 +1,5 @@
-Documentation for CashKamera
-============================
+Documentation
+=============
 
 internal-api
 ------------
