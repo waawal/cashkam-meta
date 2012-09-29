@@ -27,6 +27,23 @@ TBD
 Workers
 =======
 
+TBD
+
+Media Workers
+-------------
+
+TBD
+
+Geo Workers
+-----------
+
+TBD
+
+Maintenance Workers
+-------------------
+
+TBD
+
 Sessions
 ========
 
