@@ -6,7 +6,58 @@ CashKamera High Level Technical Overview
 :Info: See the `docs repository <https://github.com/waawal/cashkam-meta>`_ for the latest source.
 :Author: Daniel Waardal
 
-This is the internal documentation of the REST-like API for communication between the various frontends and the CashKamera backend. The default format for returned values is `application/json`.
+This is the internal documentation of the inner workings of the CashKam platform.
+
 
 .. figure::  backend_drawing.png
 
+API Endpoints
+=============
+
+Router
+------
+
+TBD
+
+Load Balancing
+--------------
+
+TBD
+
+Workers
+=======
+
+Sessions
+========
+
+TBD
+
+Streaming
+---------
+
+TBD
+
+Data Storage
+============
+
+TBD
+
+Geographical Queries
+--------------------
+
+TBD
+
+Media
+-----
+
+TBD
+
+Users
+-----
+
+TBD
+
+Ads
+---
+
+TBD
