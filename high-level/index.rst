@@ -8,4 +8,5 @@ CashKamera High Level Technical Overview
 
 This is the internal documentation of the REST-like API for communication between the various frontends and the CashKamera backend. The default format for returned values is `application/json`.
 
-.. figure::  backend-drawing.svg
+.. figure::  backend_drawing.png
+
