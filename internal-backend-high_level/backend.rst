@@ -5,7 +5,7 @@ CashKamera Backend
 API Endpoints
 -------------
 
-.. figure::  backend_drawing.png
+.. figure::  _static/backend_drawing.png
 
 Router
 ~~~~~~

@@ -1,3 +1,5 @@
+.. figure::  _static/massforstroelse-logo.png
+
 ========================================
 CashKamera High Level Technical Overview
 ========================================
