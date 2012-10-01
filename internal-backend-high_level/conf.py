@@ -26,7 +26,7 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.todo', 'sphinxcontrib.httpdomain']
+#extensions = ['sphinx.ext.todo', 'sphinxcontrib.httpdomain']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -41,7 +41,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'CashKam API'
+project = u'CashKam High Level Technical Overview'
 copyright = u'2012, Massförströelse Inc'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -184,7 +184,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'CashKamAPI.tex', u'CashKam API Documentation',
+  ('index', 'CashKamHLO.tex', u'CashKam Documentation',
    u'Daniel Waardal', 'manual'),
 ]
 
@@ -214,7 +214,7 @@ latex_domain_indices = False
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'cashkamapi', u'CashKam API Documentation',
+    ('index', 'cashkamapi', u'CashKam Documentation',
      [u'Daniel Waardal'], 1)
 ]
 
@@ -228,7 +228,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'CashKamAPI', u'CashKam API Documentation',
+  ('index', 'CashKamHLO', u'CashKam Documentation',
    u'Daniel Waardal', 'CashKamAPI', 'One line description of project.',
    'Miscellaneous'),
 ]

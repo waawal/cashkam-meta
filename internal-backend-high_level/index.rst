@@ -5,3 +5,9 @@ CashKamera High Level Technical Overview
 :Author: Daniel Waardal
 
 This is the internal documentation of the inner workings of the CashKam platform.
+
+.. toctree::
+   :maxdepth: 3
+   
+   backend
+   frontend
