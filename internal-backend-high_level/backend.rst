@@ -1,73 +1,75 @@
-==================
-CashKamera Backend
-==================
+=======
+Backend
+=======
 
 API Endpoints
 -------------
 
 .. figure::  _static/backend_drawing.png
 
+The Endpoint architecture runs exclusively on Ubuntu 12.04. It consists of a multiprocess pre-forked WSGI-app on coro-steroids (gevent) communicating over a unified REST-interface with all the frontends.
+
 Router
 ~~~~~~
 
-TBD
+NGINX routes based on subdomains to the correct port set up in CIRCUS.
 
 Load Balancing
 ~~~~~~~~~~~~~~
 
-TBD
+NGINX (+ DNS round robin and CARP for HA)
 
 Workers
 -------
 
-TBD
+``Celery`` or ``RQ``  
 
 Media Workers
 ~~~~~~~~~~~~~
 
-TBD
+``OpenCV`` for thumbnailification and POI discovery.
 
 Geo Workers
 ~~~~~~~~~~~
 
-TBD
+``Redis`` and ``MongoDB`` Map/Reduce 
 
 Maintenance Workers
 ~~~~~~~~~~~~~~~~~~~
 
-TBD
+``MongoDB`` + Map/Reduce
 
 Sessions
 --------
 
-TBD
+Sessions are stored in ``Redis``hashes.
 
 Streaming
 ~~~~~~~~~
 
-TBD
+Streaming of data to sessions is achieved by the implementation of two technologies. On the app-side we use secure ``websockets`` and in the webbrowser we use ``ServerEvents``since we don't need the duplexed communication.
 
 Data Storage
 ------------
 
-TBD
+Static files served over HTTP with ``NGINX``.
 
 Geographical Queries
 ~~~~~~~~~~~~~~~~~~~~
 
-TBD
+``Elastic Search`
 
 Media
 ~~~~~
 
-TBD
+``NGINX``
 
 Users
 ~~~~~
 
-TBD
+``MongoDB`
 
 Ads
 ~~~
 
-TBD
+``MongoDB``
