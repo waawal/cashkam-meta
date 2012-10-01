@@ -22,10 +22,14 @@ Load Balancing
 Workers
 -------
 
+Model of the Publish Ad workerflow:
+
+
+.. figure::  _static/publish_ad.png
+
 ``Celery``
 
 .. note::
-
   During Aplha: ``RQ``
 
 Media Workers
@@ -34,16 +38,15 @@ Media Workers
 ``OpenCV`` for thumbnailification and POI discovery.
 
 .. note::
-
   During Aplha: http://wiki.nginx.org/HttpImageFilterModule
 
-Geo Workers
-~~~~~~~~~~~
+Geospatial Workers
+~~~~~~~~~~~~~~~~~~
 
 There are two categories of GEO-queus in CashKam;
 
-1. ``new:ad`` A work gets pushed to the queue when a new ad has been created.
-2. ``update:pos`` A work get pushed to the queue when a device movement has been detected.
+1. ``new:ad`` - > when a new ad has been created.
+2. ``update:pos`` - > when a device movement has been detected.
 
 The ``new:ad`` queue looks for matches of the source against dynamic adlists. The ``update:pos`` looks through the users dynamic adlists after items matching the list-settings.
 
@@ -57,7 +60,17 @@ Maintenance Workers
 Sessions
 --------
 
-Sessions are stored in ``Redis`` hashes.
+Sessions are stored in ``Redis`` hashes. There is a difference between App- and Web-session due to our current dual approach for pushing of data.
+
+Web-sessions
+^^^^^^^^^^^
+
+Web sessions identifies theirselves by sending their auth-info in a cookie.
+
+App-sessions
+^^^^^^^^^^^^
+
+App-sessions as opposed to the web-sessions sends their auth credentials in the HTTP-header.
 
 Streaming
 ~~~~~~~~~

@@ -8,6 +8,8 @@ CashKamera High Level Technical Overview
 
 This is the internal documentation of the inner workings of the CashKam platform.
 
+.. figure::  _static/client-backend_drawing.png
+
 .. toctree::
    :maxdepth: 3
    
