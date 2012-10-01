@@ -5,24 +5,24 @@ CashKamera Frontend
 Mobile Applications
 ~~~~~~~~~~~~~~~~~~~
 
-TBD
+The first incarnation will use the ``Alloy`` MVC framework on top of the ``Appcelerator` framework for fast prototyping.
 
 Android
 -------
 
-TBD
+``Appcelerator`` + ``Alloy``
 
 iOS
 ---
 
-TBD
+``Appcelerator`` + ``Alloy``
 
 Web Application
 ~~~~~~~~~~~~~~~
 
-TBD
+The web application uses the same API as the Mobile apps.
 
 Browser
 -------
 
-TBD
+``Spine.js``
