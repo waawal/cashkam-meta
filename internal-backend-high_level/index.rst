@@ -19,7 +19,7 @@ Overview
 ~~~~~~~~
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    
    frontend/mobile
    frontend/web
@@ -33,7 +33,7 @@ Overview
 ~~~~~~~~
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    backend/endpoints
    backend/workers
