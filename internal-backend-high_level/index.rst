@@ -39,4 +39,5 @@ Overview
    backend/workers
    backend/sessions
    backend/db
+   backend/search
    backend/statics
